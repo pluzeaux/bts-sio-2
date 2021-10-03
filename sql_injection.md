@@ -2,7 +2,7 @@
 
 ## Qu'est-ce que l'injection SQL (SQLi) ?
 
-![Injection SQL illustration 1](images/figure_1.png")
+![Injection SQL illustration 1](../images/figure_1.png")
 
 L'injection SQL est une vulnérabilité de sécurité Web qui permet à un attaquant d'interférer avec les requêtes qu'une application effectue sur sa base de données. Il permet généralement à un attaquant de visualiser des données qu'il n'est normalement pas en mesure de récupérer. Cela peut inclure des données appartenant à d'autres utilisateurs ou toute autre donnée à laquelle l'application elle-même est en mesure d'accéder. Dans de nombreux cas, un attaquant peut modifier ou supprimer ces données, provoquant des modifications persistantes du contenu ou du comportement de l'application.
 Dans certaines situations, un attaquant peut intensifier une attaque par injection SQL pour compromettre le serveur sous-jacent ou une autre infrastructure principale, ou effectuer une attaque par déni de service.
