@@ -167,7 +167,11 @@ Si le nombre de valeurs `NULL` ne correspond pas au nombre de colonnes, la base 
 All queries combined using a UNION, INTERSECT or EXCEPT operator must have an equal number of expressions in their target lists.
 ```
 
-Encore une fois, l'application peut en fait renvoyer ce message d'erreur, ou peut simplement renvoyer une erreur générique ou aucun résultat. Lorsque le nombre de valeurs `NULL` correspond au nombre de colonnes, la base de données renvoie une ligne supplémentaire dans le jeu de résultats, contenant des valeurs `NULL` dans chaque colonne. L'effet sur la réponse *HTTP* résultante dépend du code de l'application. Si vous avez de la chance, vous verrez du contenu supplémentaire dans la réponse, comme une ligne supplémentaire sur un tableau *HTML*. Sinon, les valeurs nulles pourraient déclencher une erreur différente, telle qu'une exception de type  `NullPointerException`. Dans le pire des cas, la réponse peut être impossible à distinguer de celle qui est provoquée par un nombre incorrect de valeurs `NULL`, rendant cette méthode de détermination du nombre de colonnes inefficace.
+Encore une fois, l'application peut en fait renvoyer ce message d'erreur, ou peut simplement renvoyer une erreur générique ou aucun résultat.  
+Lorsque le nombre de valeurs `NULL` correspond au nombre de colonnes, la base de données renvoie une ligne supplémentaire dans le jeu de résultats, contenant des valeurs `NULL` dans chaque colonne.  
+L'effet sur la réponse *HTTP* résultante dépend du code de l'application. Si vous avez de la chance, vous verrez du contenu supplémentaire dans la réponse, comme une ligne supplémentaire sur un tableau *HTML*.  
+Sinon, les valeurs nulles pourraient déclencher une erreur différente, telle qu'une exception de type  `NullPointerException`.  
+Dans le pire des cas, la réponse peut être impossible à distinguer de celle qui est provoquée par un nombre incorrect de valeurs `NULL`, rendant cette méthode de détermination du nombre de colonnes inefficace.
 
 !!! note
     La raison de l'utilisation NULLdes valeurs renvoyées par la SELECTrequête injectée est que les types de données dans chaque colonne doivent être compatibles entre les requêtes d'origine et injectées. Étant donné qu'il NULLest convertible en tous les types de données couramment utilisés, l'utilisation NULLmaximise les chances que la charge utile réussisse lorsque le nombre de colonnes est correct.
