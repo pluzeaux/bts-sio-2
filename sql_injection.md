@@ -378,10 +378,10 @@ La plupart des vulnérabilités d'injection SQL surviennent dans la WHEREclause 
 
 Mais les vulnérabilités d'injection SQL peuvent en principe se produire à n'importe quel endroit de la requête et au sein de différents types de requêtes. Les autres emplacements les plus courants où l'injection SQL se produit sont :
 
-* Dans les *UPDATE* instructions, dans les valeurs mises à jour ou la WHEREclause.
-* Dans les *INSERT* instructions, dans les valeurs insérées.
-* Dans les *SELECT* instructions, dans le nom de la table ou de la colonne.
-* Dans les *SELECT* déclarations, dans la *ORDER BY* clause.
+* Dans les instructions *UPDATE*, dans les valeurs mises à jour ou la clause WHERE.
+* Dans les instructions *INSERT*, dans les valeurs insérées.
+* Dans les instructions *SELECT*, dans le nom de la table ou de la colonne.
+* Dans les déclarations *SELECT*, dans la clause *ORDER BY*.
 
 ## Injection SQL de second ordre
 
