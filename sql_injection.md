@@ -4,7 +4,7 @@
 
 ![Injection SQL illustration 1](https://github.com/pluzeaux/bts-sio/blob/main/images/figure_1.png)
 
-L'injection SQL est une vulnérabilité de sécurité Web qui permet à un attaquant d'interférer avec les requêtes qu'une application effectue sur sa base de données.
+L'injection *SQL* est une vulnérabilité de sécurité Web qui permet à un attaquant d'interférer avec les requêtes qu'une application effectue sur sa base de données.  
 
 Il permet généralement à un attaquant de visualiser des données qu'il n'est normalement pas en mesure de récupérer. Cela peut inclure des données appartenant à d'autres utilisateurs ou toute autre donnée à laquelle l'application elle-même est en mesure d'accéder.
 
@@ -14,16 +14,17 @@ Dans certaines situations, un attaquant peut intensifier une attaque par injecti
 
 ## Quel est l'impact d'une attaque par injection SQL réussie ?
 
-Une attaque par injection SQL réussie peut entraîner un accès non autorisé à des données sensibles, telles que des mots de passe, des détails de carte de crédit ou des informations personnelles sur l'utilisateur. De nombreuses violations de données très médiatisées ces dernières années ont été le résultat d'attaques par injection SQL, entraînant des dommages à la réputation et des amendes réglementaires. Dans certains cas, un attaquant peut obtenir une porte dérobée persistante dans les systèmes d'une organisation, entraînant une compromission à long terme qui peut passer inaperçue pendant une période prolongée.
+Une attaque par injection *SQL* réussie peut entraîner un accès non autorisé à des données sensibles, telles que des mots de passe, des détails de carte de crédit ou des informations personnelles sur l'utilisateur. De nombreuses violations de données très médiatisées ces dernières années ont été le résultat d'attaques par injection *SQL*, entraînant des dommages à la réputation et des amendes réglementaires.  
+Dans certains cas, un attaquant peut obtenir une porte dérobée persistante dans les systèmes d'une organisation, entraînant une compromission à long terme qui peut passer inaperçue pendant une période prolongée.  
 
-## Exemples d'injection SQL
+## Exemples d'injection *SQL*
 
-Il existe une grande variété de vulnérabilités, d'attaques et de techniques d'injection SQL, qui surviennent dans différentes situations. Voici quelques exemples courants d'injection SQL :
+Il existe une grande variété de vulnérabilités, d'attaques et de techniques d'injection SQL, qui surviennent dans différentes situations. Voici quelques exemples courants d'injection *SQL* :
 
 * Récupération des données cachées , où vous pouvez modifier une requête SQL pour renvoyer des résultats supplémentaires.
-* Attaques UNION , où vous pouvez récupérer des données à partir de différentes tables de base de données.
+* Attaques `UNION` , où vous pouvez récupérer des données à partir de différentes tables de base de données.
 * Examiner la base de données , où vous pouvez extraire des informations sur la version et la structure de la base de données.
-* Injection SQL aveugle , où les résultats d'une requête que vous contrôlez ne sont pas renvoyés dans les réponses de l'application.
+* Injection *SQL* aveugle , où les résultats d'une requête que vous contrôlez ne sont pas renvoyés dans les réponses de l'application.
 
 ### Récupérer des données cachées
 
@@ -32,22 +33,21 @@ Considérez une application d'achat qui affiche des produits dans différentes c
 https://insecure-website.com/products?category=Gifts
 ```
 
-Cela amène l'application à effectuer une requête SQL pour récupérer les détails des produits pertinents à partir de la base de données :
+Cela amène l'application à effectuer une requête *SQL* pour récupérer les détails des produits pertinents à partir de la base de données :
 
 ```sql
 SELECT * FROM products WHERE category = 'Gifts' AND released = 1
 ```
-
-Cette requête SQL demande à la base de données de retourner :
-
+Cette requête *SQL* demande à la base de données de retourner :
 * tous les détails (\*)
-* du tableau des produits
-* où la catégorie est Cadeaux
-* et libéré est 1.
+* de la table `produits`
+* où la `category` est `Gifts`
+* et `released` est 1.
 
 
-La restriction released = 1est utilisée pour masquer les produits qui ne sont pas publiés. Pour les produits inédits, probablement released = 0.
-L'application n'implémente aucune défense contre les attaques par injection SQL, donc un attaquant peut construire une attaque comme :
+La restriction `released = 1` est utilisée pour masquer les produits qui ne sont pas publiés. Pour les produits inédits, probablement `released = 0`.
+L'application n'implémente aucune défense contre les attaques par injection *SQL*, donc un attaquant peut construire une attaque comme :
+
 ```
 https://insecure-website.com/products?category=Gifts'--
 ```
@@ -58,7 +58,7 @@ Cela se traduit par la requête SQL :
 SELECT * FROM products WHERE category = 'Gifts'--' AND released = 1
 ```
 
-L'élément clé ici est que la séquence à double tiret --est un indicateur de commentaire en SQL et signifie que le reste de la requête est interprété comme un commentaire. Cela supprime efficacement le reste de la requête, de sorte qu'elle n'inclut plus AND released = 1. Cela signifie que tous les produits sont affichés, y compris les produits non lancés.
+L'élément clé ici est que la séquence à double tiret `--` est un indicateur de commentaire en *SQL* et signifie que le reste de la requête est interprété comme un commentaire. Cela supprime efficacement le reste de la requête, de sorte qu'elle n'inclut plus `AND released = 1`. Cela signifie que tous les produits sont affichés, y compris les produits non lancés.
 
 Pour aller plus loin, un attaquant peut faire en sorte que l'application affiche tous les produits de n'importe quelle catégorie, y compris des catégories qu'il ne connaît pas :
 
@@ -66,16 +66,16 @@ Pour aller plus loin, un attaquant peut faire en sorte que l'application affiche
 https://insecure-website.com/products?category=Gifts'+OR+1=1--
 ```
 
-Cela se traduit par la requête SQL :
+Cela se traduit par la requête *SQL* :
 
 ```sql
 SELECT * FROM products WHERE category = 'Gifts' OR 1=1--' AND released = 1
 ```
-La requête modifiée renverra tous les éléments dont la catégorie est Cadeaux ou 1 est égal à 1. Comme 1=1 est toujours vrai, la requête renverra tous les éléments.
+La requête modifiée renverra tous les éléments dont la `category` est `Gifts` ou `1` est égal à `1`. Comme `1=1` est toujours vrai, la requête renverra tous les éléments.
 
 ## Subversion de la logique applicative
 
-Considérez une application qui permet aux utilisateurs de se connecter avec un nom d'utilisateur et un mot de passe. Si un utilisateur soumet le nom d'utilisateur wieneret le mot de passe bluecheese, l'application vérifie les informations d'identification en effectuant la requête SQL suivante :
+Considérez une application qui permet aux utilisateurs de se connecter avec un nom d'utilisateur et un mot de passe. Si un utilisateur soumet le nom d'utilisateur `wieneret` le mot de passe `bluecheese`, l'application vérifie les informations d'identification en effectuant la requête *SQL* suivante :
 
 ```sql
 SELECT * FROM users WHERE username = 'wiener' AND password = 'bluecheese'
@@ -83,19 +83,19 @@ SELECT * FROM users WHERE username = 'wiener' AND password = 'bluecheese'
 
 Si la requête renvoie les détails d'un utilisateur, la connexion est réussie. Sinon, il est rejeté.
 
-Ici, un attaquant peut se connecter en tant qu'utilisateur sans mot de passe simplement en utilisant la séquence de commentaires SQL --pour supprimer la vérification du mot de passe de la WHEREclause de la requête. Par exemple, la soumission du nom d'utilisateur administrator'--et d'un mot de passe vide génère la requête suivante :
+Ici, un attaquant peut se connecter en tant qu'utilisateur sans mot de passe simplement en utilisant la séquence de commentaires SQL --pour supprimer la vérification du mot de passe de la WHEREclause de la requête. Par exemple, la soumission du nom d'utilisateur administrator'-- et d'un mot de passe vide génère la requête suivante :
 
 ```sql
 SELECT * FROM users WHERE username = 'administrator'--' AND password = ''
 ```
 
-Cette requête renvoie l'utilisateur dont le nom d'utilisateur est administratoret connecte avec succès l'attaquant en tant qu'utilisateur.
+Cette requête renvoie l'utilisateur dont le nom est `administrator` et connecte avec succès l'attaquant en tant qu'utilisateur.
 
 ## Récupérer des données à partir d'autres tables de base de données
 
-Dans les cas où les résultats d'une requête SQL sont renvoyés dans les réponses de l'application, un attaquant peut exploiter une vulnérabilité d'injection SQL pour récupérer des données à partir d'autres tables de la base de données. Cela se fait à l'aide du UNIONmot - clé, qui vous permet d'exécuter une SELECTrequête supplémentaire et d'ajouter les résultats à la requête d'origine.
+Dans les cas où les résultats d'une requête *SQL* sont renvoyés dans les réponses de l'application, un attaquant peut exploiter une vulnérabilité d'injection *SQL* pour récupérer des données à partir d'autres tables de la base de données. Cela se fait à l'aide du `UNION` mot-clé, qui vous permet d'exécuter un `SELECT`  supplémentaire et d'ajouter les résultats à la requête d'origine.
 
-Par exemple, si une application exécute la requête suivante contenant l'entrée utilisateur « Cadeaux » :
+Par exemple, si une application exécute la requête suivante contenant l'entrée utilisateur « Gifts » :
 
 ```sql
 SELECT name, description FROM products WHERE category = 'Gifts'
@@ -111,26 +111,26 @@ Cela obligera l'application à renvoyer tous les noms d'utilisateur et mots de p
 
 ### Attaques UNION par injection SQL
 
-Lorsqu'une application est vulnérable à l'injection *SQL* et que les résultats de la requête sont renvoyés dans les réponses de l'application, le UNIONmot - clé peut être utilisé pour récupérer des données à partir d'autres tables de la base de données. Cela entraîne une attaque UNION par injection SQL.
+Lorsqu'une application est vulnérable à l'injection *SQL* et que les résultats de la requête sont renvoyés dans les réponses de l'application, le mot-clé `UNION` peut être utilisé pour récupérer des données à partir d'autres tables de la base de données. Cela entraîne une attaque `UNION` par injection *SQL*.
 
-Le *UNION* mot-clé vous permet d'exécuter une ou plusieurs *SELECT* requêtes supplémentaires et d'ajouter les résultats à la requête d'origine.
+Le mot-clé *UNION* vous permet d'exécuter une ou plusieurs requêtes *SELECT* supplémentaires et d'ajouter les résultats à la requête d'origine.
 Par exemple:
 
 ```sql
 SELECT a, b FROM table1 UNION SELECT c, d FROM table2
 ```
 
-Cette requête *SQL* renverra un seul jeu de résultats avec deux colonnes, contenant les valeurs des colonnes a et b dans table1 et des colonnes c et d dans table2.
+Cette requête *SQL* renverra un seul jeu de résultats avec deux colonnes, contenant les valeurs des colonnes `a` et `b` dans `table1` et des colonnes `c` et `d` dans `table2`.
 
-Pour qu'une `UNION` requête fonctionne, deux exigences clés doivent être remplies :
+Pour qu'une requête `UNION` fonctionne, deux exigences clés doivent être remplies :
 
 Les requêtes individuelles doivent renvoyer le même nombre de colonnes.
 Les types de données dans chaque colonne doivent être compatibles entre les requêtes individuelles.
 Pour effectuer une attaque `UNION` par injection *SQL*, vous devez vous assurer que votre attaque répond à ces deux exigences.
-Il s'agit généralement de déterminer :
 
-Combien de colonnes sont renvoyées à partir de la requête d'origine ?
-Quelles colonnes renvoyées par la requête d'origine sont d'un type de données approprié pour contenir les résultats de la requête injectée ?
+Il s'agit généralement de déterminer :
+* Combien de colonnes sont renvoyées à partir de la requête d'origine ?
+* Quelles colonnes renvoyées par la requête d'origine sont d'un type de données approprié pour contenir les résultats de la requête injectée ?
 
 #### Détermination du nombre de colonnes requises dans une attaque UNION par injection SQL
 
@@ -145,13 +145,14 @@ La première méthode consiste à injecter une série de `ORDER BY` clauses et �
 etc.
 ```
 
-Cette série de charges utiles modifie la requête d'origine pour ordonner les résultats par différentes colonnes dans l'ensemble de résultats. La colonne d'une ORDER BYclause peut être spécifiée par son index, vous n'avez donc pas besoin de connaître le nom des colonnes. Lorsque l'index de colonne spécifié dépasse le nombre de colonnes réelles dans le jeu de résultats, la base de données renvoie une erreur, telle que :
+Cette série d'instructions modifie la requête d'origine pour ordonner les résultats par différentes colonnes dans l'ensemble de résultats. La colonne d'un `ORDER BY` clause peut être spécifiée par son index, vous n'avez donc pas besoin à connaître le nom des colonnes. Lorsque l'index de colonne spécifié dépasse le nombre de colonnes réelles dans le jeu de résultats, la base de données renvoie une erreur, telle que :
 
+```sql
 The `ORDER BY` position number 3 is out of range of the number of items in the select list.
-
+```
 L'application peut en fait renvoyer l'erreur de base de données dans sa réponse *HTTP*, ou elle peut renvoyer une erreur générique, ou simplement ne renvoyer aucun résultat. À condition que vous puissiez détecter une différence dans la réponse de l'application, vous pouvez déduire le nombre de colonnes renvoyées à partir de la requête.
 
-La deuxième méthode consiste à soumettre une série de `UNION SELECT` charges utiles spécifiant un nombre différent de valeurs nulles :
+La deuxième méthode consiste à soumettre une série de `UNION SELECT` spécifiant un nombre différent de valeurs nulles :
 
 ```sql
 ' UNION SELECT NULL--
@@ -166,7 +167,7 @@ Si le nombre de valeurs `NULL` ne correspond pas au nombre de colonnes, la base 
 All queries combined using a UNION, INTERSECT or EXCEPT operator must have an equal number of expressions in their target lists.
 ```
 
-Encore une fois, l'application peut en fait renvoyer ce message d'erreur, ou peut simplement renvoyer une erreur générique ou aucun résultat. Lorsque le nombre de valeurs `NULL` correspond au nombre de colonnes, la base de données renvoie une ligne supplémentaire dans le jeu de résultats, contenant des valeurs `NULL` dans chaque colonne. L'effet sur la réponse *HTTP* résultante dépend du code de l'application. Si vous avez de la chance, vous verrez du contenu supplémentaire dans la réponse, comme une ligne supplémentaire sur un tableau HTML. Sinon, les valeurs nulles pourraient déclencher une erreur différente, telle qu'un fichier `NullPointerException`. Dans le pire des cas, la réponse peut être impossible à distinguer de celle qui est provoquée par un nombre incorrect de valeurs `NULL`, rendant cette méthode de détermination du nombre de colonnes inefficace.
+Encore une fois, l'application peut en fait renvoyer ce message d'erreur, ou peut simplement renvoyer une erreur générique ou aucun résultat. Lorsque le nombre de valeurs `NULL` correspond au nombre de colonnes, la base de données renvoie une ligne supplémentaire dans le jeu de résultats, contenant des valeurs `NULL` dans chaque colonne. L'effet sur la réponse *HTTP* résultante dépend du code de l'application. Si vous avez de la chance, vous verrez du contenu supplémentaire dans la réponse, comme une ligne supplémentaire sur un tableau *HTML*. Sinon, les valeurs nulles pourraient déclencher une erreur différente, telle qu'une exception de type  `NullPointerException`. Dans le pire des cas, la réponse peut être impossible à distinguer de celle qui est provoquée par un nombre incorrect de valeurs `NULL`, rendant cette méthode de détermination du nombre de colonnes inefficace.
 
 !!! note
     La raison de l'utilisation NULLdes valeurs renvoyées par la SELECTrequête injectée est que les types de données dans chaque colonne doivent être compatibles entre les requêtes d'origine et injectées. Étant donné qu'il NULLest convertible en tous les types de données couramment utilisés, l'utilisation NULLmaximise les chances que la charge utile réussisse lorsque le nombre de colonnes est correct.
@@ -174,10 +175,11 @@ Encore une fois, l'application peut en fait renvoyer ce message d'erreur, ou peu
     Les charges utiles décrites utilisent la séquence --de commentaires à double tiret pour commenter le reste de la requête d'origine après le point d'injection. Sur MySQL, la séquence de double tiret doit être suivie d'un espace. Alternativement, le caractère dièse #peut être utilisé pour identifier un commentaire.
     Pour plus de détails sur la syntaxe spécifique à la base de données, consultez l' aide-mémoire sur l'injection SQL .
 
-Recherche de colonnes avec un type de données utile dans une attaque UNION par injection SQL
-La raison d'effectuer une attaque UNION par injection SQL est de pouvoir récupérer les résultats d'une requête injectée. En règle générale, les données intéressantes que vous souhaitez récupérer seront sous forme de chaîne, vous devez donc rechercher une ou plusieurs colonnes dans les résultats de la requête d'origine dont le type de données est ou est compatible avec les données de chaîne.
+Recherche de colonnes avec un type de données utile dans une attaque `UNION` par injection *SQL*
 
-Après avoir déjà déterminé le nombre de colonnes requises, vous pouvez sonder chaque colonne pour tester si elle peut contenir des données de chaîne en soumettant une série de UNION SELECTcharges utiles qui placent une valeur de chaîne dans chaque colonne à tour de rôle. Par exemple, si la requête renvoie quatre colonnes, vous devez soumettre :
+La raison d'effectuer une attaque `UNION` par injection *SQL* est de pouvoir récupérer les résultats d'une requête injectée. En règle générale, les données intéressantes que vous souhaitez récupérer seront sous forme de chaîne, vous devez donc rechercher une ou plusieurs colonnes dans les résultats de la requête d'origine dont le type de données est ou est compatible avec les données de chaîne.
+
+Après avoir déjà déterminé le nombre de colonnes requises, vous pouvez sonder chaque colonne pour tester si elle peut contenir des données de chaîne en soumettant une série de `UNION SELECT` qui placent une valeur de chaîne dans chaque colonne à tour de rôle. Par exemple, si la requête renvoie quatre colonnes, vous devez soumettre :
 
 ```sql
 ' UNION SELECT 'a',NULL,NULL,NULL--
