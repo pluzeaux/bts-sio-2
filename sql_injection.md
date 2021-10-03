@@ -174,10 +174,12 @@ Sinon, les valeurs nulles pourraient déclencher une erreur différente, telle q
 Dans le pire des cas, la réponse peut être impossible à distinguer de celle qui est provoquée par un nombre incorrect de valeurs `NULL`, rendant cette méthode de détermination du nombre de colonnes inefficace.
 
 !!! note
-    La raison de l'utilisation NULLdes valeurs renvoyées par la SELECTrequête injectée est que les types de données dans chaque colonne doivent être compatibles entre les requêtes d'origine et injectées. Étant donné qu'il NULLest convertible en tous les types de données couramment utilisés, l'utilisation NULLmaximise les chances que la charge utile réussisse lorsque le nombre de colonnes est correct.
-    Sur Oracle, chaque SELECTrequête doit utiliser le FROMmot - clé et spécifier une table valide. Il existe une table intégrée sur Oracle appelée dualqui peut être utilisée à cette fin. Ainsi, les requêtes injectées sur Oracle devraient ressembler à : ' UNION SELECT NULL FROM DUAL--.
-    Les charges utiles décrites utilisent la séquence --de commentaires à double tiret pour commenter le reste de la requête d'origine après le point d'injection. Sur MySQL, la séquence de double tiret doit être suivie d'un espace. Alternativement, le caractère dièse #peut être utilisé pour identifier un commentaire.
-    Pour plus de détails sur la syntaxe spécifique à la base de données, consultez l' aide-mémoire sur l'injection SQL .
+    La raison de l'utilisation `NULL` des valeurs renvoyées par la requête `SELECT` injectée est que les types de données dans chaque colonne doivent être compatibles entre les requêtes d'origine et injectées.  
+    Étant donné que `NULL` est convertible en tous les types de données couramment utilisés, l'utilisation de `NULL` maximise les chances que l'injectione réussisse lorsque le nombre de colonnes est correct.  
+    Sur *Oracle*, chaque requête `SELECT` doit utiliser le mot-clé `FROM` et spécifier une table valide. Il existe une table intégrée sur *Oracle* appelée `DUAL` qui peut être utilisée à cette fin.  
+    Ainsi, les requêtes injectées sur *Oracle* devraient ressembler à : `' UNION SELECT NULL FROM DUAL--`.  
+    Les injections décrites utilisent la séquence `--` de commentaires à double tiret pour commenter le reste de la requête d'origine après le point d'injection.  
+    Sur *MySQL*, la séquence de double tiret doit être suivie d'un espace. Alternativement, le caractère dièse `#` peut être utilisé pour identifier un commentaire.
 
 Recherche de colonnes avec un type de données utile dans une attaque `UNION` par injection *SQL*
 
@@ -185,7 +187,7 @@ La raison d'effectuer une attaque `UNION` par injection *SQL* est de pouvoir ré
 
 Après avoir déjà déterminé le nombre de colonnes requises, vous pouvez sonder chaque colonne pour tester si elle peut contenir des données de chaîne en soumettant une série de `UNION SELECT` qui placent une valeur de chaîne dans chaque colonne à tour de rôle. Par exemple, si la requête renvoie quatre colonnes, vous devez soumettre :
 
-```sql
+```
 ' UNION SELECT 'a',NULL,NULL,NULL--
 ' UNION SELECT NULL,'a',NULL,NULL--
 ' UNION SELECT NULL,NULL,'a',NULL--
@@ -233,9 +235,9 @@ Les requêtes pour déterminer la version de la base de données pour certains t
 
 | Type de base de données  | Mettre en doute            
 |--------------------------|---------------------------
-| Microsoft, MySQL	       | SELECT @@version     
-| Oracle	               | SELECT * FROM v$version
-| PostgreSQL	           | SELECT version()
+| Microsoft, MySQL	       | `SELECT @@version`     
+| Oracle	               | `SELECT * FROM v$version`
+| PostgreSQL	           | `SELECT version()`
 
 Par exemple, vous pouvez utiliser une UNIONattaque avec l'entrée suivante :
 
@@ -245,7 +247,7 @@ Par exemple, vous pouvez utiliser une UNIONattaque avec l'entrée suivante :
 
 Cela peut renvoyer une sortie comme celle-ci, confirmant que la base de données est Microsoft *SQL Server* et la version utilisée :
 
-```sql
+```
 Microsoft SQL Server 2016 (SP2) (KB4052908) - 13.0.5026.0 (X64)
 Mar 18 2018 09:11:49
 Copyright (c) Microsoft Corporation
@@ -283,7 +285,7 @@ SELECT * FROM information_schema.columns WHERE table_name = 'Users'
 
 Cela renvoie une sortie comme suit :
 
-```sql
+```
 TABLE_CATALOG TABLE_SCHEMA TABLE_NAME COLUMN_NAME DATA_TYPE
 =================================================================
 MyDatabase dbo Users UserId int
