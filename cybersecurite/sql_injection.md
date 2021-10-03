@@ -360,17 +360,20 @@ Selon la nature de la vulnérabilité et la base de données impliquée, les tec
 * Vous pouvez déclencher de manière conditionnelle un délai dans le traitement de la requête, ce qui vous permet de déduire la véracité de la condition en fonction du temps que met l'application pour répondre.
 * Vous pouvez déclencher une interaction réseau hors bande à l'aide des techniques OAST . Cette technique est extrêmement puissante et fonctionne dans des situations où les autres techniques ne le font pas. Souvent, vous pouvez directement exfiltrer les données via le canal hors bande, par exemple en plaçant les données dans une recherche DNS pour un domaine que vous contrôlez.
 
+Out-of-band application security testing (OAST) utilise des serveurs externes pour voir des vulnérabilités autrement invisibles. Il a été introduit pour améliorer encore le modèle DAST (dynamic application security testing). 
+
 ## Comment détecter les vulnérabilités d'injection SQL
 
 La majorité des vulnérabilités d'injection SQL peuvent être trouvées rapidement et de manière fiable à l'aide du scanner de vulnérabilités Web de Burp Suite .
 
 L'injection SQL peut être détectée manuellement en utilisant un ensemble systématique de tests sur chaque point d'entrée de l'application. Cela implique généralement :
 
-* Soumettre le caractère guillemet simple 'et rechercher des erreurs ou d'autres anomalies.
-* Soumettre une syntaxe spécifique à SQL qui évalue la valeur de base (d'origine) du point d'entrée et une valeur différente, et rechercher des différences systématiques dans les réponses d'application résultantes.
-* Soumettre des conditions booléennes telles que OR 1=1et OR 1=2, andrechercher des différences dans les réponses de l'application.
-* Soumettre des charges utiles conçues pour déclencher des retards lorsqu'elles sont exécutées dans une requête SQL et rechercher des différences dans le temps nécessaire pour répondre.
-* Soumettre des charges utiles OAST conçues pour déclencher une interaction réseau hors bande lorsqu'elles sont exécutées dans une requête SQL, et surveiller les interactions résultantes.
+* Soumettre le caractère guillemet simple `'` et rechercher des erreurs ou d'autres anomalies.
+* Soumettre une syntaxe spécifique à *SQL* qui évalue la valeur de base (d'origine) du point d'entrée et une valeur différente, et rechercher des différences systématiques dans les réponses d'application résultantes.
+* Soumettre des conditions booléennes telles que `OR 1=1` et `OR 1=2`, et rechercher des différences dans les réponses de l'application.
+* Soumettre des charges utiles conçues pour déclencher des retards lorsqu'elles sont exécutées dans une requête *SQL* et rechercher des différences dans le temps nécessaire pour répondre.
+* Soumettre des charges utiles *OAST* conçues pour déclencher une interaction réseau hors bande lorsqu'elles sont exécutées dans une requête *SQL*, et surveiller les interactions résultantes.
+
 
 ## Injection SQL dans différentes parties de la requête
 
