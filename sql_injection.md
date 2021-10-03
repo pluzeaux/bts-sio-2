@@ -138,7 +138,7 @@ Lors de l'exécution d'une attaque `UNION` par injection *SQL*, il existe deux m
 
 La première méthode consiste à injecter une série de `ORDER BY` clauses et à incrémenter l'index de colonne spécifié jusqu'à ce qu'une erreur se produise. Par exemple, en supposant que le point d'injection est une chaîne entre guillemets dans la `WHERE` clause de la requête d'origine, vous devez soumettre :
 
-```sql
+```
 ' ORDER BY 1--
 ' ORDER BY 2--
 ' ORDER BY 3--
@@ -154,7 +154,7 @@ L'application peut en fait renvoyer l'erreur de base de données dans sa répons
 
 La deuxième méthode consiste à soumettre une série de `UNION SELECT` spécifiant un nombre différent de valeurs nulles :
 
-```sql
+```
 ' UNION SELECT NULL--
 ' UNION SELECT NULL,NULL--
 ' UNION SELECT NULL,NULL,NULL--
