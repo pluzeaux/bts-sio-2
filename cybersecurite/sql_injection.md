@@ -336,15 +336,15 @@ carlos~montoya
 ...
 ```
 
-Notez que différentes bases de données utilisent une syntaxe différente pour effectuer la concaténation de chaînes. Pour plus de détails, consultez l' aide-mémoire sur l'injection SQL .
+Notez que différentes bases de données utilisent une syntaxe différente pour effectuer la concaténation de chaînes. Pour plus de détails, consultez l' aide-mémoire sur l'injection *SQL* .
 
 
 
 ## Examen de la base de données
 
-Suite à l'identification initiale d'une vulnérabilité d'injection SQL, il est généralement utile d'obtenir des informations sur la base de données elle-même. Ces informations peuvent souvent ouvrir la voie à une exploitation ultérieure.
+Suite à l'identification initiale d'une vulnérabilité d'injection *SQL*, il est généralement utile d'obtenir des informations sur la base de données elle-même. Ces informations peuvent souvent ouvrir la voie à une exploitation ultérieure.
 
-Vous pouvez interroger les détails de la version de la base de données. La façon dont cela est fait dépend du type de base de données, vous pouvez donc déduire le type de base de données à partir de la technique qui fonctionne. Par exemple, sur Oracle, vous pouvez exécuter :
+Vous pouvez interroger les détails de la version de la base de données. La façon dont cela est fait dépend du type de base de données, vous pouvez donc déduire le type de base de données à partir de la technique qui fonctionne. Par exemple, sur *Oracle*, vous pouvez exécuter :
 
 ```sql
 SELECT * FROM v$version
@@ -356,19 +356,19 @@ Vous pouvez également déterminer quelles tables de base de données existent e
 SELECT * FROM information_schema.tables
 ```
 
-## Vulnérabilités d'injection SQL aveugle
+## Vulnérabilités d'injection *SQL* aveugle
 
-De nombreuses instances d'injection SQL sont des vulnérabilités aveugles. Cela signifie que l'application ne renvoie pas les résultats de la requête SQL ou les détails des erreurs de base de données dans ses réponses. Des vulnérabilités aveugles peuvent toujours être exploitées pour accéder à des données non autorisées, mais les techniques impliquées sont généralement plus compliquées et difficiles à mettre en œuvre.
+De nombreuses instances d'injection *SQL* sont des vulnérabilités aveugles. Cela signifie que l'application ne renvoie pas les résultats de la requête *SQL* ou les détails des erreurs de base de données dans ses réponses. Des vulnérabilités aveugles peuvent toujours être exploitées pour accéder à des données non autorisées, mais les techniques impliquées sont généralement plus compliquées et difficiles à mettre en œuvre.
 
-Selon la nature de la vulnérabilité et la base de données impliquée, les techniques suivantes peuvent être utilisées pour exploiter les vulnérabilités d'injection SQL aveugle :
+Selon la nature de la vulnérabilité et la base de données impliquée, les techniques suivantes peuvent être utilisées pour exploiter les vulnérabilités d'injection *SQL* aveugle :
 
 * Vous pouvez modifier la logique de la requête pour déclencher une différence détectable dans la réponse de l'application en fonction de la véracité d'une seule condition. Cela peut impliquer l'injection d'une nouvelle condition dans une logique booléenne ou le déclenchement conditionnel d'une erreur telle qu'une division par zéro.
 * Vous pouvez déclencher de manière conditionnelle un délai dans le traitement de la requête, ce qui vous permet de déduire la véracité de la condition en fonction du temps que met l'application pour répondre.
-* Vous pouvez déclencher une interaction réseau hors bande à l'aide des techniques OAST . Cette technique est extrêmement puissante et fonctionne dans des situations où les autres techniques ne le font pas. Souvent, vous pouvez directement exfiltrer les données via le canal hors bande, par exemple en plaçant les données dans une recherche DNS pour un domaine que vous contrôlez.
+* Vous pouvez déclencher une interaction réseau hors bande à l'aide des techniques *OAST* . Cette technique est extrêmement puissante et fonctionne dans des situations où les autres techniques ne le font pas. Souvent, vous pouvez directement exfiltrer les données via le canal hors bande, par exemple en plaçant les données dans une recherche DNS pour un domaine que vous contrôlez.
 
-Out-of-band application security testing (OAST) utilise des serveurs externes pour voir des vulnérabilités autrement invisibles. Il a été introduit pour améliorer encore le modèle DAST (dynamic application security testing). 
+*Out-of-band application security testing* (*OAST*) utilise des serveurs externes pour voir des vulnérabilités autrement invisibles. Il a été introduit pour améliorer encore le modèle *DAST (dynamic application security testing)*. 
 
-## Comment détecter les vulnérabilités d'injection SQL
+## Comment détecter les vulnérabilités d'injection *SQL*
 
 La majorité des vulnérabilités d'injection SQL peuvent être trouvées rapidement et de manière fiable à l'aide du scanner de vulnérabilités Web de Burp Suite .
 
@@ -381,33 +381,33 @@ L'injection SQL peut être détectée manuellement en utilisant un ensemble syst
 * Soumettre des charges utiles *OAST* conçues pour déclencher une interaction réseau hors bande lorsqu'elles sont exécutées dans une requête *SQL*, et surveiller les interactions résultantes.
 
 
-## Injection SQL dans différentes parties de la requête
+## Injection *SQL* dans différentes parties de la requête
 
-La plupart des vulnérabilités d'injection SQL surviennent dans la WHEREclause d'une SELECTrequête. Ce type d'injection SQL est généralement bien compris par les testeurs expérimentés.
+La plupart des vulnérabilités d'injection *SQL* surviennent dans la WHEREclause d'une requête `SELECT`. Ce type d'injection *SQL* est généralement bien compris par les testeurs expérimentés.
 
-Mais les vulnérabilités d'injection SQL peuvent en principe se produire à n'importe quel endroit de la requête et au sein de différents types de requêtes. Les autres emplacements les plus courants où l'injection SQL se produit sont :
+Mais les vulnérabilités d'injection *SQL* peuvent en principe se produire à n'importe quel endroit de la requête et au sein de différents types de requêtes. Les autres emplacements les plus courants où l'injection *SQL* se produit sont :
 
 * Dans les instructions *UPDATE*, dans les valeurs mises à jour ou la clause WHERE.
 * Dans les instructions *INSERT*, dans les valeurs insérées.
 * Dans les instructions *SELECT*, dans le nom de la table ou de la colonne.
 * Dans les déclarations *SELECT*, dans la clause *ORDER BY*.
 
-## Injection SQL de second ordre
+## Injection *SQL* de second ordre
 
-L'injection SQL de premier ordre se produit lorsque l'application prend l'entrée de l'utilisateur à partir d'une requête HTTP et, au cours du traitement de cette requête, incorpore l'entrée dans une requête SQL d'une manière dangereuse.
+L'injection *SQL* de premier ordre se produit lorsque l'application prend l'entrée de l'utilisateur à partir d'une requête *HTTP* et, au cours du traitement de cette requête, incorpore l'entrée dans une requête *SQL* d'une manière dangereuse.
 
-Dans l'injection SQL de second ordre (également appelée injection SQL stockée), l'application prend l'entrée de l'utilisateur à partir d'une requête HTTP et la stocke pour une utilisation future. Cela se fait généralement en plaçant l'entrée dans une base de données, mais aucune vulnérabilité ne survient au point où les données sont stockées. Plus tard, lors du traitement d'une requête HTTP différente, l'application récupère les données stockées et les intègre dans une requête SQL de manière non sécurisée.
+Dans l'injection *SQL* de second ordre (également appelée injection *SQL* stockée), l'application prend l'entrée de l'utilisateur à partir d'une requête *HTTP* et la stocke pour une utilisation future. Cela se fait généralement en plaçant l'entrée dans une base de données, mais aucune vulnérabilité ne survient au point où les données sont stockées. Plus tard, lors du traitement d'une requête *HTTP* différente, l'application récupère les données stockées et les intègre dans une requête *SQL* de manière non sécurisée.
 
-![Injection SQL illustration 1](https://github.com/pluzeaux/bts-sio/blob/main/images/figure_2.png)
+![Injection *SQL* illustration 1](https://github.com/pluzeaux/bts-sio/blob/main/images/figure_2.png)
 
-L'injection SQL de second ordre se produit souvent dans des situations où les développeurs sont conscients des vulnérabilités de l'injection SQL et gèrent ainsi en toute sécurité le placement initial de l'entrée dans la base de données. Lorsque les données sont traitées ultérieurement, elles sont considérées comme sûres, car elles ont été précédemment placées dans la base de données en toute sécurité. À ce stade, les données sont traitées de manière dangereuse, car le développeur les considère à tort comme dignes de confiance.
+L'injection *SQL* de second ordre se produit souvent dans des situations où les développeurs sont conscients des vulnérabilités de l'injection *SQL* et gèrent ainsi en toute sécurité le placement initial de l'entrée dans la base de données. Lorsque les données sont traitées ultérieurement, elles sont considérées comme sûres, car elles ont été précédemment placées dans la base de données en toute sécurité. À ce stade, les données sont traitées de manière dangereuse, car le développeur les considère à tort comme dignes de confiance.
 
 
 ## Facteurs spécifiques à la base de données
 
-Certaines fonctionnalités de base du langage *SQL* sont implémentées de la même manière sur les plates-formes de bases de données courantes, et de nombreuses façons de détecter et d'exploiter les vulnérabilités d'injection SQL fonctionnent de manière identique sur différents types de bases de données.
+Certaines fonctionnalités de base du langage *SQL* sont implémentées de la même manière sur les plates-formes de bases de données courantes, et de nombreuses façons de détecter et d'exploiter les vulnérabilités d'injection *SQL* fonctionnent de manière identique sur différents types de bases de données.
 
-Cependant, il existe également de nombreuses différences entre les bases de données communes. Cela signifie que certaines techniques de détection et d'exploitation de l'injection SQL fonctionnent différemment sur différentes plates-formes. Par exemple:
+Cependant, il existe également de nombreuses différences entre les bases de données communes. Cela signifie que certaines techniques de détection et d'exploitation de l'injection *SQL* fonctionnent différemment sur différentes plates-formes. Par exemple:
 
 * Syntaxe pour la concaténation de chaînes.
 * Commentaires.
