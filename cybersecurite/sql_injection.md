@@ -193,9 +193,9 @@ La raison d'effectuer une attaque `UNION` par injection *SQL* est de pouvoir ré
 Après avoir déjà déterminé le nombre de colonnes requises, vous pouvez sonder chaque colonne pour tester si elle peut contenir des données de chaîne en soumettant une série de `UNION SELECT` qui placent une valeur de chaîne dans chaque colonne à tour de rôle. Par exemple, si la requête renvoie quatre colonnes, vous devez soumettre :
 
 ```
-' UNION SELECT 'a',  NULL, NULL, NULL--
-' UNION SELECT NULL, 'a',  NULL, NULL--
-' UNION SELECT NULL, NULL, 'a',  NULL--
+' UNION SELECT 'a' , NULL, NULL, NULL--
+' UNION SELECT NULL, 'a' , NULL, NULL--
+' UNION SELECT NULL, NULL, 'a' , NULL--
 ' UNION SELECT NULL, NULL, NULL, 'a' --
 ```
 
