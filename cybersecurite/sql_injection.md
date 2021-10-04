@@ -75,15 +75,15 @@ La requête modifiée renverra tous les éléments dont la `category` est `Gifts
 
 ## Subversion de la logique applicative
 
-Considérez une application qui permet aux utilisateurs de se connecter avec un nom d'utilisateur et un mot de passe. Si un utilisateur soumet le nom d'utilisateur `wieneret` le mot de passe `bluecheese`, l'application vérifie les informations d'identification en effectuant la requête *SQL* suivante :
+Considérez une application qui permet aux utilisateurs de se connecter avec un nom d'utilisateur et un mot de passe.  
+Si un utilisateur soumet le nom d'utilisateur `wieneret` le mot de passe `bluecheese`, l'application vérifie les informations d'identification en effectuant la requête *SQL* suivante :
 
 ```sql
 SELECT * FROM users WHERE username = 'wiener' AND password = 'bluecheese'
 ```
 
 Si la requête renvoie les détails d'un utilisateur, la connexion est réussie. Sinon, il est rejeté.
-
-Ici, un attaquant peut se connecter en tant qu'utilisateur sans mot de passe simplement en utilisant la séquence de commentaires SQL --pour supprimer la vérification du mot de passe de la WHEREclause de la requête. Par exemple, la soumission du nom d'utilisateur administrator'-- et d'un mot de passe vide génère la requête suivante :
+Ici, un attaquant peut se connecter en tant qu'utilisateur sans mot de passe simplement en utilisant la séquence de commentaires *SQL* `--` pour supprimer la vérification du mot de passe de la clause `WHERE` de la requête. Par exemple, la soumission du nom d'utilisateur `administrator'--` et d'un mot de passe vide génère la requête suivante :
 
 ```sql
 SELECT * FROM users WHERE username = 'administrator'--' AND password = ''
@@ -93,7 +93,9 @@ Cette requête renvoie l'utilisateur dont le nom est `administrator` et connecte
 
 ## Récupérer des données à partir d'autres tables de base de données
 
-Dans les cas où les résultats d'une requête *SQL* sont renvoyés dans les réponses de l'application, un attaquant peut exploiter une vulnérabilité d'injection *SQL* pour récupérer des données à partir d'autres tables de la base de données. Cela se fait à l'aide du `UNION` mot-clé, qui vous permet d'exécuter un `SELECT`  supplémentaire et d'ajouter les résultats à la requête d'origine.
+Dans les cas où les résultats d'une requête *SQL* sont renvoyés dans les réponses de l'application, un attaquant peut exploiter une vulnérabilité d'injection *SQL* pour récupérer des données à partir d'autres tables de la base de données.  
+Cela se fait à l'aide du `UNION` mot-clé, qui vous permet d'exécuter un `SELECT`  supplémentaire et d'ajouter les résultats à la requête d'origine.
+
 
 Par exemple, si une application exécute la requête suivante contenant l'entrée utilisateur « Gifts » :
 
@@ -176,8 +178,11 @@ Dans le pire des cas, la réponse peut être impossible à distinguer de celle q
 !!! note
     La raison de l'utilisation `NULL` des valeurs renvoyées par la requête `SELECT` injectée est que les types de données dans chaque colonne doivent être compatibles entre les requêtes d'origine et injectées.  
     Étant donné que `NULL` est convertible en tous les types de données couramment utilisés, l'utilisation de `NULL` maximise les chances que l'injectione réussisse lorsque le nombre de colonnes est correct.  
-    Sur *Oracle*, chaque requête `SELECT` doit utiliser le mot-clé `FROM` et spécifier une table valide. Il existe une table intégrée sur *Oracle* appelée `DUAL` qui peut être utilisée à cette fin.  
-    Ainsi, les requêtes injectées sur *Oracle* devraient ressembler à : `' UNION SELECT NULL FROM DUAL--`.  
+    Sur *Oracle*, chaque requête `SELECT` doit utiliser le mot-clé `FROM` et spécifier une table valide. Il existe une table intégrée sur *Oracle* appelée `DUAL` qui peut être utilisée à cette fin. 
+
+    Ainsi, les requêtes injectées sur *Oracle* devraient ressembler à :  
+    `' UNION SELECT NULL FROM DUAL--`. 
+
     Les injections décrites utilisent la séquence `--` de commentaires à double tiret pour commenter le reste de la requête d'origine après le point d'injection.  
     Sur *MySQL*, la séquence de double tiret doit être suivie d'un espace. Alternativement, le caractère dièse `#` peut être utilisé pour identifier un commentaire.
 
@@ -188,10 +193,10 @@ La raison d'effectuer une attaque `UNION` par injection *SQL* est de pouvoir ré
 Après avoir déjà déterminé le nombre de colonnes requises, vous pouvez sonder chaque colonne pour tester si elle peut contenir des données de chaîne en soumettant une série de `UNION SELECT` qui placent une valeur de chaîne dans chaque colonne à tour de rôle. Par exemple, si la requête renvoie quatre colonnes, vous devez soumettre :
 
 ```
-' UNION SELECT 'a',NULL,NULL,NULL--
-' UNION SELECT NULL,'a',NULL,NULL--
-' UNION SELECT NULL,NULL,'a',NULL--
-' UNION SELECT NULL,NULL,NULL,'a'--
+' UNION SELECT 'a',  NULL, NULL, NULL--
+' UNION SELECT NULL, 'a',  NULL, NULL--
+' UNION SELECT NULL, NULL, 'a',  NULL--
+' UNION SELECT NULL, NULL, NULL, 'a' --
 ```
 
 Si le type de données d'une colonne n'est pas compatible avec les données de chaîne, la requête injectée provoquera une erreur de base de données, telle que :
@@ -218,9 +223,9 @@ Dans cette situation, vous pouvez récupérer le contenu de la userstable en sou
 ' UNION SELECT username, password FROM users--
 ```
 
-Bien sûr, l'information cruciale nécessaire pour effectuer cette attaque est qu'il existe une table appelée `users` avec deux colonnes appelées username et `password`. Sans ces informations, vous seriez obligé de deviner les noms des tables et des colonnes. En fait, toutes les bases de données modernes offrent des moyens d'examiner la structure de la base de données, afin de déterminer quelles tables et colonnes elle contient.
-
-
+Bien sûr, l'information cruciale nécessaire pour effectuer cette attaque est qu'il existe une table appelée `users` avec deux colonnes appelées username et `password`.  
+Sans ces informations, vous seriez obligé de deviner les noms des tables et des colonnes.  
+En fait, toutes les bases de données modernes offrent des moyens d'examiner la structure de la base de données, afin de déterminer quelles tables et colonnes elle contient.
 
 
 #### Examen de la base de données dans les attaques par injection SQL
