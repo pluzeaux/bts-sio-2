@@ -175,10 +175,10 @@ L'effet sur la réponse *HTTP* résultante dépend du code de l'application. Si 
 Sinon, les valeurs nulles pourraient déclencher une erreur différente, telle qu'une exception de type  `NullPointerException`.  
 Dans le pire des cas, la réponse peut être impossible à distinguer de celle qui est provoquée par un nombre incorrect de valeurs `NULL`, rendant cette méthode de détermination du nombre de colonnes inefficace.
 
-!!! note
-     La raison de l'utilisation `NULL` des valeurs renvoyées par la requête `SELECT` injectée est que les types      de données dans chaque colonne doivent être compatibles entre les requêtes d'origine et injectées.  
-     Étant donné que `NULL` est convertible en tous les types de données couramment utilisés, l'utilisation de      `NULL` maximise les chances que l'injectione réussisse lorsque le nombre de colonnes est correct.  
-     Sur *Oracle*, chaque requête `SELECT` doit utiliser le mot-clé `FROM` et spécifier une table valide. Il        existe une table intégrée sur *Oracle* appelée `DUAL` qui peut être utilisée à cette fin. 
+>    note
+>    La raison de l'utilisation `NULL` des valeurs renvoyées par la requête `SELECT` injectée est que les types      de données dans chaque colonne doivent être compatibles entre >    les requêtes d'origine et injectées.  
+>    Étant donné que `NULL` est convertible en tous les types de données couramment utilisés, l'utilisation de      `NULL` maximise les chances que l'injectione réussisse lorsque >    le nombre de colonnes est correct.  
+>    Sur *Oracle*, chaque requête `SELECT` doit utiliser le mot-clé `FROM` et spécifier une table valide. Il        existe une table intégrée sur *Oracle* appelée `DUAL` qui peut >    être utilisée à cette fin. 
 
      Ainsi, les requêtes injectées sur *Oracle* devraient ressembler à :  
      `' UNION SELECT NULL FROM DUAL--`. 
