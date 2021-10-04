@@ -111,11 +111,11 @@ alors un attaquant peut soumettre l'entrée :
 
 Cela obligera l'application à renvoyer tous les noms d'utilisateur et mots de passe ainsi que les noms et descriptions des produits.
 
-### Attaques UNION par injection SQL
+### Attaques `UNION` par injection SQL
 
 Lorsqu'une application est vulnérable à l'injection *SQL* et que les résultats de la requête sont renvoyés dans les réponses de l'application, le mot-clé `UNION` peut être utilisé pour récupérer des données à partir d'autres tables de la base de données. Cela entraîne une attaque `UNION` par injection *SQL*.
 
-Le mot-clé *UNION* vous permet d'exécuter une ou plusieurs requêtes *SELECT* supplémentaires et d'ajouter les résultats à la requête d'origine.
+Le mot-clé `UNION` vous permet d'exécuter une ou plusieurs requêtes `SELECT` supplémentaires et d'ajouter les résultats à la requête d'origine.
 Par exemple:
 
 ```sql
