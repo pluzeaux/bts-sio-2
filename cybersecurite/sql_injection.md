@@ -236,13 +236,13 @@ Lors de l'exploitation des vulnérabilités d' injection *SQL* , il est souvent 
 
 Différentes bases de données offrent différentes manières d'interroger leur version. Vous devez souvent essayer différentes requêtes pour en trouver une qui fonctionne, vous permettant de déterminer à la fois le type et la version du logiciel de base de données.
 
-Les requêtes pour déterminer la version de la base de données pour certains types de base de données courants sont les suivantes :
+Les requêtes pour déterminer la version de la base de données sont les suivantes :
 
-| Type de base de données  | Mettre en doute            
+| Editeurs                 | Fonction *SQL*
 |--------------------------|---------------------------
 | Microsoft, MySQL	       | `SELECT @@version`     
-| Oracle	               | `SELECT * FROM v$version`
-| PostgreSQL	           | `SELECT version()`
+| Oracle	                 | `SELECT * FROM v$version`
+| PostgreSQL	            | `SELECT version()`
 
 Par exemple, vous pouvez utiliser une UNIONattaque avec l'entrée suivante :
 
