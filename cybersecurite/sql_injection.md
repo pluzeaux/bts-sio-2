@@ -315,6 +315,7 @@ SELECT * FROM all_tab_columns WHERE table_name = 'USERS'
 ```
 
 #### Récupérer plusieurs valeurs dans une seule colonne
+
 Dans l'exemple précédent, supposons plutôt que la requête ne renvoie qu'une seule colonne.
 
 Vous pouvez facilement récupérer plusieurs valeurs ensemble dans cette seule colonne en concaténant les valeurs ensemble, en incluant idéalement un séparateur approprié pour vous permettre de distinguer les valeurs combinées. Par exemple, sur *Oracle*, vous pouvez soumettre l'entrée :
@@ -323,7 +324,7 @@ Vous pouvez facilement récupérer plusieurs valeurs ensemble dans cette seule c
 ' UNION SELECT username || '~' || password FROM users--
 ```
 
-Cela utilise la séquence à double tube ||qui est un opérateur de concaténation de chaînes sur Oracle. La requête injectée concatène les valeurs des champs usernameet password, séparées par le ~caractère.
+Cela utilise la séquence à double tube `||` qui est un opérateur de concaténation de chaînes sur Oracle. La requête injectée concatène les valeurs des champs username et password, séparées par le caractère `~`.
 
 Les résultats de la requête vous permettront de lire tous les noms d'utilisateur et mots de passe, par exemple :
 
