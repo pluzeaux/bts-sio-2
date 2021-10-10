@@ -1,0 +1,1123 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.0">
+    
+    
+      
+        <title>Plus sur les chaînes de caractères - BTS SIO 1ère année</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8b42a75e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#plus-sur-les-chaines-de-caracteres" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="BTS SIO 1ère année" class="md-header__button md-logo" aria-label="BTS SIO 1ère année" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BTS SIO 1ère année
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Plus sur les chaînes de caractères
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="BTS SIO 1ère année" class="md-nav__button md-logo" aria-label="BTS SIO 1ère année" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    BTS SIO 1ère année
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Bts sio 1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Bts sio 1" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Bts sio 1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        bts-sio-1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2" type="checkbox" id="__nav_1_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_2">
+          Cybersecurite
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cybersecurite" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          Cybersecurite
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cybersecurite/authentification/" class="md-nav__link">
+        Les principes de l'authentification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cybersecurite/authentification_principes/" class="md-nav__link">
+        Les principes de l'authentification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cybersecurite/rgpd/" class="md-nav__link">
+        Qu'est-ce que le RGPD ?
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_3">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Python" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../boucles/" class="md-nav__link">
+        Boucles et comparaisons
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Plus sur les chaînes de caractères
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Plus sur les chaînes de caractères
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chaines-de-caracteres-et-listes" class="md-nav__link">
+    Chaînes de caractères et listes
+  </a>
+  
+    <nav class="md-nav" aria-label="Chaînes de caractères et listes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteres-speciaux" class="md-nav__link">
+    Caractères spéciaux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefixe-de-chaine-de-caracteres" class="md-nav__link">
+    Préfixe de chaîne de caractères
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extraction-de-valeurs-numeriques-dune-chaine-de-caracteres" class="md-nav__link">
+    Extraction de valeurs numériques d'une chaîne de caractères
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../collections/" class="md-nav__link">
+        Dictionnaires, tuples et sets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fichiers/" class="md-nav__link">
+        Fichiers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fonction/" class="md-nav__link">
+        Fonctions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../listes/" class="md-nav__link">
+        Listes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tests/" class="md-nav__link">
+        Tests
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chaines-de-caracteres-et-listes" class="md-nav__link">
+    Chaînes de caractères et listes
+  </a>
+  
+    <nav class="md-nav" aria-label="Chaînes de caractères et listes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteres-speciaux" class="md-nav__link">
+    Caractères spéciaux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefixe-de-chaine-de-caracteres" class="md-nav__link">
+    Préfixe de chaîne de caractères
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extraction-de-valeurs-numeriques-dune-chaine-de-caracteres" class="md-nav__link">
+    Extraction de valeurs numériques d'une chaîne de caractères
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="plus-sur-les-chaines-de-caracteres">Plus sur les chaînes de caractères</h1>
+<h2 id="chaines-de-caracteres-et-listes">Chaînes de caractères et listes</h2>
+<p>Les chaînes de caractères peuvent être considérées comme des listes (de caractères) un peu particulières :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span> <span class="o">=</span> <span class="s2">&quot;girafe tigre&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span>
+<span class="s1">&#39;girafe tigre&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">animaux</span><span class="p">)</span>
+<span class="mi">12</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="s1">&#39;a&#39;</span>
+</code></pre></div>
+</td></tr></table>
+<p>Nous pouvons donc utiliser certaines propriétés des listes comme les tranches :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span> <span class="o">=</span> <span class="s2">&quot;girafe tigre&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+<span class="s1">&#39;gira&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span><span class="p">[</span><span class="mi">9</span><span class="p">:]</span>
+<span class="s1">&#39;gre&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="s1">&#39;girafe tig&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<span class="s1">&#39;iaetg&#39;</span>
+</code></pre></div>
+</td></tr></table>
+<p>Mais a contrario des listes, les chaînes de caractères présentent toutefois une différence notable, ce sont des listes non modifiables. Une fois une chaîne de caractères définie, vous ne pouvez plus modifier un de ses éléments. Le cas échéant, Python renvoie un message d'erreur :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span> <span class="o">=</span> <span class="s2">&quot;girafe tigre&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<span class="s1">&#39;f&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;F&quot;</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">TypeError</span><span class="p">:</span> <span class="s1">&#39;str&#39;</span> <span class="nb">object</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">support</span> <span class="n">item</span> <span class="n">assignment</span>
+</code></pre></div>
+</td></tr></table>
+<p>Par conséquent, si vous voulez modifier une chaîne de caractères, vous devez en construire une nouvelle. Pour cela, n'oubliez pas que les opérateurs de concaténation (+) et de duplication (<code>*</code>) (introduits dans le chapitre 2 Variables) peuvent vous aider. Vous pouvez également générer une liste, qui elle est modifiable, puis revenir à une chaîne de caractères (voir plus bas).</p>
+<h3 id="caracteres-speciaux">Caractères spéciaux</h3>
+<p>Il existe certains caractères spéciaux comme <code>\n</code> que nous avons déjà vu (pour le retour à la ligne). Le caractère \t produit une tabulation. Si vous voulez écrire des guillemets simples ou doubles et que ceux-ci ne soient pas confondus avec les guillemets de déclaration de la chaîne de caractères, vous pouvez utiliser \' ou \".</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Un retour à la ligne</span><span class="se">\n</span><span class="s2">puis une tabulation</span><span class="se">\t</span><span class="s2"> puis un guillemet</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">Un</span> <span class="n">retour</span> <span class="n">à</span> <span class="n">la</span> <span class="n">ligne</span>
+<span class="n">puis</span> <span class="n">une</span> <span class="n">tabulation</span>     <span class="n">puis</span> <span class="n">un</span> <span class="n">guillemet</span><span class="s2">&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;J</span><span class="se">\&#39;</span><span class="s1">affiche un guillemet simple&#39;</span><span class="p">)</span>
+<span class="n">J</span><span class="s1">&#39;affiche un guillemet simple</span>
+</code></pre></div>
+</td></tr></table>
+<p>Vous pouvez aussi utiliser astucieusement des guillemets doubles ou simples pour déclarer votre chaîne de caractères :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Un brin d&#39;ADN&quot;</span><span class="p">)</span>
+<span class="n">Un</span> <span class="n">brin</span> <span class="n">d</span><span class="s1">&#39;ADN</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Python est un &quot;super&quot; langage de programmation&#39;</span><span class="p">)</span>
+<span class="n">Python</span> <span class="n">est</span> <span class="n">un</span> <span class="s2">&quot;super&quot;</span> <span class="n">langage</span> <span class="n">de</span> <span class="n">programmation</span>
+</code></pre></div>
+</td></tr></table>
+<p>Quand on souhaite écrire un texte sur plusieurs lignes, il est très commode d'utiliser les guillemets triples qui conservent le formatage (notamment les retours à la ligne) :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;souris</span>
+<span class="s2">... chat</span>
+<span class="s2">... abeille&quot;&quot;&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
+<span class="s1">&#39;souris</span><span class="se">\n</span><span class="s1">chat</span><span class="se">\n</span><span class="s1">abeille&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">souris</span>
+<span class="n">chat</span>
+<span class="n">abeille</span>
+</code></pre></div>
+</td></tr></table>
+<p>Attention, les caractères spéciaux n'apparaissent intérprétés que lorsqu'ils sont utilisés avec la fonction print(). Par exemple, le \n n'apparait comme un saut de ligne que lorsqu'il est dans une chaîne de caractères passée à la fonction print() :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;bla</span><span class="se">\n</span><span class="s2">bla&quot;</span>
+<span class="s1">&#39;bla</span><span class="se">\n</span><span class="s1">bla&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;bla</span><span class="se">\n</span><span class="s2">bla&quot;</span><span class="p">)</span>
+<span class="n">bla</span>
+<span class="n">bla</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="prefixe-de-chaine-de-caracteres">Préfixe de chaîne de caractères</h3>
+<p>Nous avons vu au chapitre 3 la notion de f-string. Il s'agit d'un mécanisme pour formater du texte au sein d'une chaîne de caractères. Par exemple :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">var</span> <span class="o">=</span> <span class="s2">&quot;f-string&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="sa">f</span><span class="s2">&quot;voici une belle </span><span class="si">{</span><span class="n">var</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="s1">&#39;voici une belle f-string&#39;</span>
+</code></pre></div>
+</td></tr></table>
+<p>Que signifie le f que l'on accole aux guillements de la chaîne de caractères ? Celui-ci est appelé « préfixe de chaîne de caractères » ou stringprefix.</p>
+<p>Remarque</p>
+<p>Un stringprefix modifie la manière dont Python va interpréter la dite string. Celui-ci doit être systématiquement « collé » à la chaîne de caractères, c'est-à-dire pas d'espace entre les deux.</p>
+<p>Il existe différents stringprefixes en Python, nous vous montrons ici les deux qui nous apparaissent les plus importants.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Le préfixe r mis pour raw string qui force la non-interprétation des caractères spéciaux :
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;Voici un retour à la ligne</span><span class="se">\n</span><span class="s2">Et là une autre ligne&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span>
+<span class="s1">&#39;Voici un retour à la ligne</span><span class="se">\n</span><span class="s1">Et là une autre ligne&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="n">Voici</span> <span class="n">un</span> <span class="n">retour</span> <span class="n">à</span> <span class="n">la</span> <span class="n">ligne</span>
+<span class="n">Et</span> <span class="n">là</span> <span class="n">une</span> <span class="n">autre</span> <span class="n">ligne</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;Voici un retour à la ligne\nEt là une autre ligne&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span>
+<span class="s1">&#39;Voici un retour à la ligne</span><span class="se">\\</span><span class="s1">nEt là une autre ligne&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="n">Voici</span> <span class="n">un</span> <span class="n">retour</span> <span class="n">à</span> <span class="n">la</span> <span class="n">ligne</span>\<span class="n">nEt</span> <span class="n">là</span> <span class="n">une</span> <span class="n">autre</span> <span class="n">ligne</span>
+</code></pre></div>
+</td></tr></table>
+<p>L'ajout du r va forcer Python à ne pas interpréter le \n comme un retour à la ligne, mais comme un backslash littéral suivi d'un n. Quand on demande à l'interpréteur d'afficher cette chaîne de caractères, celui-ci met deux backslashes pour signifier qu'il s'agit d'un backslash littéral (le premier échappe le second). Finalement, l'utilisation de la syntaxe r"Voici un retour à la ligne\nEt là une autre ligne" renvoie une chaîne de caractères normale, puisqu'on voit ensuite que le r à disparu lorsqu'on demande à Python d'afficher le contenu de la variable s. Comme dans var = 2 + 2, d'abord Python évalue 2 + 2 et c'est ce résultat qui est affecté à la variable var. Enfin, on notera que seule l'utilisation du print() mène à l'interprétation des caractères spéciaux comme \n, comme expliqué dans la rubrique précédente.</p>
+<p>Les caractères spéciaux non interprétés dans les raw strings sont de manière générale tout ce dont le backslash modifie la signification, par exemple un \n, un \t, etc.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Le préfixe f mis pour formatted string qui met en place l&#39;écriture formattée comme vue au chapitre 3 Affichage :
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">animal</span> <span class="o">=</span> <span class="s2">&quot;renard&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animal2</span> <span class="o">=</span> <span class="s2">&quot;poulain&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Le </span><span class="si">{</span><span class="n">animal</span><span class="si">}</span><span class="s2"> est un animal gentil</span><span class="se">\n</span><span class="s2">Le </span><span class="si">{</span><span class="n">animal2</span><span class="si">}</span><span class="s2"> aussi&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span>
+<span class="s1">&#39;Le renard est un animal gentil</span><span class="se">\n</span><span class="s1">Le poulain aussi&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="n">Le</span> <span class="n">renard</span> <span class="n">est</span> <span class="n">un</span> <span class="n">animal</span> <span class="n">gentil</span>
+<span class="n">Le</span> <span class="n">poulain</span> <span class="n">aussi</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;Le </span><span class="si">{animal}</span><span class="s2"> est un animal gentil</span><span class="se">\n</span><span class="s2">Le </span><span class="si">{animal2}</span><span class="s2"> aussi&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span>
+<span class="s1">&#39;Le </span><span class="si">{animal}</span><span class="s1"> est un animal gentil</span><span class="se">\n</span><span class="s1">Le </span><span class="si">{animal2}</span><span class="s1"> aussi&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="n">Le</span> <span class="p">{</span><span class="n">animal</span><span class="p">}</span> <span class="n">est</span> <span class="n">un</span> <span class="n">animal</span> <span class="n">gentil</span>
+<span class="n">Le</span> <span class="p">{</span><span class="n">animal2</span><span class="p">}</span> <span class="n">aussi</span>
+</code></pre></div>
+</td></tr></table>
+<p>La f-string remplace le contenu des variables situées entre les accolades et interprète le \n comme un retour à la ligne. Pour rappel, consultez le chapitre 3 si vous souhaitez plus de détails sur le fonctionnement des f-strings.</p>
+<p>Conseils</p>
+<p>Il existe de nombreux autres détails concernant les préfixes qui vont au delà de ce cours. Pour en savoir plus, vous pouvez consulter la documentations officielle.</p>
+<p>10.5 Méthodes associées aux chaînes de caractères</p>
+<p>Voici quelques méthodes spécifiques aux objets de type str :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;girafe&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="s1">&#39;GIRAFE&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
+<span class="s1">&#39;girafe&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;TIGRE&#39;</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="s1">&#39;tigre&#39;</span>
+</code></pre></div>
+</td></tr></table>
+<p>Les méthodes .lower() et .upper() renvoient un texte en minuscule et en majuscule respectivement. On remarque que l'utilisation de ces méthodes n'altère pas la chaîne de caractères de départ mais renvoie une chaîne de caractères transformée.</p>
+<p>Pour mettre en majuscule la première lettre seulement, vous pouvez faire :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="s1">&#39;Girafe&#39;</span>
+</code></pre></div>
+</td></tr></table>
+<p>ou plus simplement utiliser la méthode adéquate :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+<span class="s1">&#39;Girafe&#39;</span>
+</code></pre></div>
+</td></tr></table>
+<p>Il existe une méthode associée aux chaînes de caractères qui est particulièrement pratique, la méthode .split() :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span> <span class="o">=</span> <span class="s2">&quot;girafe tigre singe souris&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="p">[</span><span class="s1">&#39;girafe&#39;</span><span class="p">,</span> <span class="s1">&#39;tigre&#39;</span><span class="p">,</span> <span class="s1">&#39;singe&#39;</span><span class="p">,</span> <span class="s1">&#39;souris&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">animal</span> <span class="ow">in</span> <span class="n">animaux</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">animal</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="n">girafe</span>
+<span class="n">tigre</span>
+<span class="n">singe</span>
+<span class="n">souris</span>
+</code></pre></div>
+</td></tr></table>
+<p>La méthode .split() découpe une chaîne de caractères en plusieurs éléments appelés champs, en utilisant comme séparateur n'importe quelle combinaison « d'espace(s) blanc(s) ».</p>
+<p>Définition</p>
+<p>Un espace blanc (whitespace en anglais) correspond aux caractères qui sont invisibles à l'œil, mais qui occupent de l'espace dans un texte. Les espaces blancs les plus classiques sont l'espace, la tabulation et le retour à la ligne.</p>
+<p>Il est possible de modifier le séparateur de champs, par exemple :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span> <span class="o">=</span> <span class="s2">&quot;girafe:tigre:singe::souris&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+<span class="p">[</span><span class="s1">&#39;girafe&#39;</span><span class="p">,</span> <span class="s1">&#39;tigre&#39;</span><span class="p">,</span> <span class="s1">&#39;singe&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;souris&#39;</span><span class="p">]</span>
+</code></pre></div>
+</td></tr></table>
+<p>Attention, dans cet exemple, le séparateur est un seul caractères « : » (et non pas une combinaison de un ou plusieurs :) conduisant ainsi à une chaîne vide entre singe et souris.</p>
+<p>Il est également intéressant d'indiquer à .split() le nombre de fois qu'on souhaite découper la chaîne de caractères avec l'argument maxsplit :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span> <span class="o">=</span> <span class="s2">&quot;girafe tigre singe souris&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">maxsplit</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">[</span><span class="s1">&#39;girafe&#39;</span><span class="p">,</span> <span class="s1">&#39;tigre singe souris&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">maxsplit</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="p">[</span><span class="s1">&#39;girafe&#39;</span><span class="p">,</span> <span class="s1">&#39;tigre&#39;</span><span class="p">,</span> <span class="s1">&#39;singe souris&#39;</span><span class="p">]</span>
+</code></pre></div>
+</td></tr></table>
+<p>La méthode .find(), quant à elle, recherche une chaîne de caractères passée en argument :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">animal</span> <span class="o">=</span> <span class="s2">&quot;girafe&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animal</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;i&quot;</span><span class="p">)</span>
+<span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animal</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;afe&quot;</span><span class="p">)</span>
+<span class="mi">3</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animal</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;z&quot;</span><span class="p">)</span>
+<span class="o">-</span><span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animal</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;tig&quot;</span><span class="p">)</span>
+<span class="o">-</span><span class="mi">1</span>
+</code></pre></div>
+</td></tr></table>
+<p>Si l'élément recherché est trouvé, alors l'indice du début de l'élément dans la chaîne de caractères est renvoyé. Si l'élément n'est pas trouvé, alors la valeur -1 est renvoyée.</p>
+<p>Si l'élément recherché est trouvé plusieurs fois, seul l'indice de la première occurrence est renvoyé :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span> <span class="o">=</span> <span class="s2">&quot;girafe tigre&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;i&quot;</span><span class="p">)</span>
+<span class="mi">1</span>
+</code></pre></div>
+</td></tr></table>
+<p>On trouve aussi la méthode .replace() qui substitue une chaîne de caractères par une autre :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span> <span class="o">=</span> <span class="s2">&quot;girafe tigre&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;tigre&quot;</span><span class="p">,</span> <span class="s2">&quot;singe&quot;</span><span class="p">)</span>
+<span class="s1">&#39;girafe singe&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;i&quot;</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">)</span>
+<span class="s1">&#39;gorafe togre&#39;</span>
+</code></pre></div>
+</td></tr></table>
+<p>La méthode .count() compte le nombre d’occurrences d'une chaîne de caractères passée en argument :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span> <span class="o">=</span> <span class="s2">&quot;girafe tigre&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;i&quot;</span><span class="p">)</span>
+<span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;z&quot;</span><span class="p">)</span>
+<span class="mi">0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;tigre&quot;</span><span class="p">)</span>
+<span class="mi">1</span>
+</code></pre></div>
+</td></tr></table>
+<p>La méthode .startswith() vérifie si une chaîne de caractères commence par une autre chaîne de caractères :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">chaine</span> <span class="o">=</span> <span class="s2">&quot;Bonjour monsieur le capitaine !&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">chaine</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;Bonjour&quot;</span><span class="p">)</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">chaine</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;Au revoir&quot;</span><span class="p">)</span>
+<span class="kc">False</span>
+</code></pre></div>
+</td></tr></table>
+<p>Cette méthode est particulièrement utile lorsqu'on lit un fichier et que l'on veut récupérer certaines lignes commençant par un mot-clé. Par exemple dans un fichier PDB, les lignes contenant les coordonnées des atomes commencent par le mot-clé ATOM.</p>
+<p>Enfin, la méthode .strip() permet de « nettoyer les bords » d'une chaîne de caractères :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">chaine</span> <span class="o">=</span> <span class="s2">&quot;  Comment enlever les espaces au début et à la fin ?       &quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">chaine</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="s1">&#39;Comment enlever les espaces au début et à la fin ?&#39;</span>
+</code></pre></div>
+</td></tr></table>
+<p>La méthode .strip() enlève les espaces situés sur les bords de la chaîne de caractère mais pas ceux situés entre des caractères visibles. En réalité, cette méthode enlève n'importe quel combinaison « d'espace(s) blanc(s) » sur les bords, par exemple :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">chaine</span> <span class="o">=</span> <span class="s2">&quot;  </span><span class="se">\t</span><span class="s2">fonctionne avec les tabulations et les retours à la ligne</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">chaine</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="s1">&#39;fonctionne avec les tabulations et les retours à la ligne&#39;</span>
+</code></pre></div>
+</td></tr></table>
+<p>La méthode .strip() est très pratique quand on lit un fichier et qu'on veut se débarrasser des retours à la ligne.</p>
+<h2 id="extraction-de-valeurs-numeriques-dune-chaine-de-caracteres">Extraction de valeurs numériques d'une chaîne de caractères</h2>
+<p>Une tâche courante en Python est de lire une chaîne de caractères (provenant par exemple d'un fichier), d'extraire des valeurs de cette chaîne de caractères pour ensuite les manipuler.</p>
+<p>On considère par exemple la chaîne de caractères val :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">val</span> <span class="o">=</span> <span class="s2">&quot;3.4 17.2 atom&quot;</span>
+</code></pre></div>
+</td></tr></table>
+<p>On souhaite extraire les valeurs 3.4 et 17.2 pour ensuite les additionner.</p>
+<p>Dans un premier temps, on découpe la chaîne de caractères avec la méthode .split() :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">val2</span> <span class="o">=</span> <span class="n">val</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">val2</span>
+<span class="p">[</span><span class="s1">&#39;3.4&#39;</span><span class="p">,</span> <span class="s1">&#39;17.2&#39;</span><span class="p">,</span> <span class="s1">&#39;atom&#39;</span><span class="p">]</span>
+</code></pre></div>
+</td></tr></table>
+<p>On obtient alors une liste de chaînes de caractères. On transforme ensuite les deux premiers éléments de cette liste en floats (avec la fonction float()) pour pouvoir les additionner :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">float</span><span class="p">(</span><span class="n">val2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">val2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="mf">20.599999999999998</span>
+</code></pre></div>
+</td></tr></table>
+<p>Remarque</p>
+<p>Retenez bien l'utilisation des instructions précédentes pour extraire des valeurs numériques d'une chaîne de caractères. Elles sont régulièrement employées pour analyser des données extraites d'un fichier.</p>
+<p>10.7 Conversion d'une liste de chaînes de caractères en une chaîne de caractères</p>
+<p>On a vu dans le chapitre 2 Variables la conversion d'un type simple (entier, float et chaîne de caractères) en un autre avec les fonctions int(), float() et str(). La conversion d'une liste de chaînes de caractères en une chaîne de caractères est particulière puisqu'elle fait appelle à la méthode .join().</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">seq</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">seq</span>
+<span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;-&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span>
+<span class="s1">&#39;A-T-G-A-T&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span>
+<span class="s1">&#39;A T G A T&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span>
+<span class="s1">&#39;ATGAT&#39;</span>
+</code></pre></div>
+</td></tr></table>
+<p>Les éléments de la liste initiale sont concaténés les uns à la suite des autres et intercalés par un séparateur qui peut être n'importe quelle chaîne de caractères. Ici, on a utilisé un tiret, un espace et rien (une chaîne de caractères vide).</p>
+<p>Attention, la méthode .join() ne s'applique qu'à une liste de chaînes de caractères.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">maliste</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">maliste</span><span class="p">)</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">TypeError</span><span class="p">:</span> <span class="n">sequence</span> <span class="n">item</span> <span class="mi">1</span><span class="p">:</span> <span class="n">expected</span> <span class="n">string</span><span class="p">,</span> <span class="nb">int</span> <span class="n">found</span>
+</code></pre></div>
+</td></tr></table>
+<p>On espère qu'après ce petit tour d'horizon vous serez convaincu de la richesse des méthodes associées aux chaînes de caractères. Pour avoir une liste exhaustive de l'ensemble des méthodes associées à une variable particulière, vous pouvez utiliser la fonction dir().</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span> <span class="o">=</span> <span class="s2">&quot;girafe tigre&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">dir</span><span class="p">(</span><span class="n">animaux</span><span class="p">)</span>
+<span class="p">[</span><span class="s1">&#39;__add__&#39;</span><span class="p">,</span> <span class="s1">&#39;__class__&#39;</span><span class="p">,</span> <span class="s1">&#39;__contains__&#39;</span><span class="p">,</span> <span class="s1">&#39;__delattr__&#39;</span><span class="p">,</span> <span class="s1">&#39;__dir__&#39;</span><span class="p">,</span>
+<span class="s1">&#39;__doc__&#39;</span><span class="p">,</span> <span class="s1">&#39;__eq__&#39;</span><span class="p">,</span> <span class="s1">&#39;__format__&#39;</span><span class="p">,</span> <span class="s1">&#39;__ge__&#39;</span><span class="p">,</span> <span class="s1">&#39;__getattribute__&#39;</span><span class="p">,</span> <span class="s1">&#39;_</span>
+<span class="n">_getitem__</span><span class="s1">&#39;, &#39;</span><span class="n">__getnewargs__</span><span class="s1">&#39;, &#39;</span><span class="fm">__gt__</span><span class="s1">&#39;, &#39;</span><span class="fm">__hash__</span><span class="s1">&#39;, &#39;</span><span class="fm">__init__</span><span class="s1">&#39;, &#39;</span><span class="n">_</span>
+<span class="n">_init_subclass__</span><span class="s1">&#39;, &#39;</span><span class="fm">__iter__</span><span class="s1">&#39;, &#39;</span><span class="fm">__le__</span><span class="s1">&#39;, &#39;</span><span class="fm">__len__</span><span class="s1">&#39;, &#39;</span><span class="fm">__lt__</span><span class="s1">&#39;, &#39;</span><span class="n">__mo</span>
+<span class="n">d__</span><span class="s1">&#39;, &#39;</span><span class="fm">__mul__</span><span class="s1">&#39;, &#39;</span><span class="fm">__ne__</span><span class="s1">&#39;, &#39;</span><span class="fm">__new__</span><span class="s1">&#39;, &#39;</span><span class="n">__reduce__</span><span class="s1">&#39;, &#39;</span><span class="n">__reduce_ex__</span><span class="s1">&#39;</span>
+<span class="p">,</span> <span class="s1">&#39;__repr__&#39;</span><span class="p">,</span> <span class="s1">&#39;__rmod__&#39;</span><span class="p">,</span> <span class="s1">&#39;__rmul__&#39;</span><span class="p">,</span> <span class="s1">&#39;__setattr__&#39;</span><span class="p">,</span> <span class="s1">&#39;__sizeof__&#39;</span><span class="p">,</span>
+<span class="s1">&#39;__str__&#39;</span><span class="p">,</span> <span class="s1">&#39;__subclasshook__&#39;</span><span class="p">,</span> <span class="s1">&#39;capitalize&#39;</span><span class="p">,</span> <span class="s1">&#39;casefold&#39;</span><span class="p">,</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span>
+<span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="s1">&#39;encode&#39;</span><span class="p">,</span> <span class="s1">&#39;endswith&#39;</span><span class="p">,</span> <span class="s1">&#39;expandtabs&#39;</span><span class="p">,</span> <span class="s1">&#39;find&#39;</span><span class="p">,</span> <span class="s1">&#39;format&#39;</span><span class="p">,</span> <span class="s1">&#39;for</span>
+<span class="n">mat_map</span><span class="s1">&#39;, &#39;</span><span class="n">index</span><span class="s1">&#39;, &#39;</span><span class="n">isalnum</span><span class="s1">&#39;, &#39;</span><span class="n">isalpha</span><span class="s1">&#39;, &#39;</span><span class="n">isdecimal</span><span class="s1">&#39;, &#39;</span><span class="n">isdigit</span><span class="s1">&#39;, &#39;</span><span class="n">i</span>
+<span class="n">sidentifier</span><span class="s1">&#39;, &#39;</span><span class="n">islower</span><span class="s1">&#39;, &#39;</span><span class="n">isnumeric</span><span class="s1">&#39;, &#39;</span><span class="n">isprintable</span><span class="s1">&#39;, &#39;</span><span class="n">isspace</span><span class="s1">&#39;, &#39;</span><span class="ow">is</span>
+<span class="n">title</span><span class="s1">&#39;, &#39;</span><span class="n">isupper</span><span class="s1">&#39;, &#39;</span><span class="n">join</span><span class="s1">&#39;, &#39;</span><span class="n">ljust</span><span class="s1">&#39;, &#39;</span><span class="n">lower</span><span class="s1">&#39;, &#39;</span><span class="n">lstrip</span><span class="s1">&#39;, &#39;</span><span class="n">maketrans</span><span class="s1">&#39;,</span>
+ <span class="s1">&#39;partition&#39;</span><span class="p">,</span> <span class="s1">&#39;replace&#39;</span><span class="p">,</span> <span class="s1">&#39;rfind&#39;</span><span class="p">,</span> <span class="s1">&#39;rindex&#39;</span><span class="p">,</span> <span class="s1">&#39;rjust&#39;</span><span class="p">,</span> <span class="s1">&#39;rpartition&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;rsplit&#39;</span><span class="p">,</span> <span class="s1">&#39;rstrip&#39;</span><span class="p">,</span> <span class="s1">&#39;split&#39;</span><span class="p">,</span> <span class="s1">&#39;splitlines&#39;</span><span class="p">,</span> <span class="s1">&#39;startswith&#39;</span><span class="p">,</span> <span class="s1">&#39;strip&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;swapcase&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;translate&#39;</span><span class="p">,</span> <span class="s1">&#39;upper&#39;</span><span class="p">,</span> <span class="s1">&#39;zfill&#39;</span><span class="p">]</span>
+</code></pre></div>
+</td></tr></table>
+<p>Pour l'instant, vous pouvez ignorer les méthodes qui commencent et qui se terminent par deux tirets bas (underscores) <code>__</code>.</p>
+<p>Vous pouvez également accéder à l'aide et à la documentation d'une méthode particulière avec help(), par exemple pour la méthode .split() :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="n">animaux</span><span class="o">.</span><span class="n">split</span><span class="p">)</span>
+<span class="n">Help</span> <span class="n">on</span> <span class="n">built</span><span class="o">-</span><span class="ow">in</span> <span class="n">function</span> <span class="n">split</span><span class="p">:</span>
+
+<span class="n">split</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="n">S</span><span class="o">.</span><span class="n">split</span><span class="p">([</span><span class="n">sep</span> <span class="p">[,</span><span class="n">maxsplit</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">strings</span>
+
+    <span class="n">Return</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">the</span> <span class="n">words</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">string</span> <span class="n">S</span><span class="p">,</span> <span class="n">using</span> <span class="n">sep</span> <span class="k">as</span> <span class="n">the</span>
+    <span class="n">delimiter</span> <span class="n">string</span><span class="o">.</span>  <span class="n">If</span> <span class="n">maxsplit</span> <span class="ow">is</span> <span class="n">given</span><span class="p">,</span> <span class="n">at</span> <span class="n">most</span> <span class="n">maxsplit</span>
+    <span class="n">splits</span> <span class="n">are</span> <span class="n">done</span><span class="o">.</span> <span class="n">If</span> <span class="n">sep</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">specified</span> <span class="ow">or</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">any</span>
+    <span class="n">whitespace</span> <span class="n">string</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">separator</span><span class="o">.</span>
+<span class="p">(</span><span class="n">END</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<p>Attention à ne pas mettre les parenthèses à la suite du nom de la méthode. L'instruction correcte est help(animaux.split) et non pas help(animaux.split()).</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../boucles/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Boucles et comparaisons" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Boucles et comparaisons
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../collections/" class="md-footer__link md-footer__link--next" aria-label="Next: Dictionnaires, tuples et sets" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Dictionnaires, tuples et sets
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.f8263e09.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.4fc53ad4.min.js"></script>
+      
+        <script src="../../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

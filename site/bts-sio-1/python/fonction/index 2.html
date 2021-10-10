@@ -1,0 +1,1029 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.0">
+    
+    
+      
+        <title>Fonctions - BTS SIO 1ère année</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8b42a75e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fonctions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="BTS SIO 1ère année" class="md-header__button md-logo" aria-label="BTS SIO 1ère année" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BTS SIO 1ère année
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Fonctions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="BTS SIO 1ère année" class="md-nav__button md-logo" aria-label="BTS SIO 1ère année" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    BTS SIO 1ère année
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Bts sio 1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Bts sio 1" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Bts sio 1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        bts-sio-1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2" type="checkbox" id="__nav_1_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_2">
+          Cybersecurite
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cybersecurite" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          Cybersecurite
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cybersecurite/authentification/" class="md-nav__link">
+        Les principes de l'authentification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cybersecurite/authentification_principes/" class="md-nav__link">
+        Les principes de l'authentification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cybersecurite/rgpd/" class="md-nav__link">
+        Qu'est-ce que le RGPD ?
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_3">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Python" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../boucles/" class="md-nav__link">
+        Boucles et comparaisons
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chaines/" class="md-nav__link">
+        Plus sur les chaînes de caractères
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../collections/" class="md-nav__link">
+        Dictionnaires, tuples et sets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fichiers/" class="md-nav__link">
+        Fichiers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Fonctions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Fonctions
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#principe-et-generalites" class="md-nav__link">
+    Principe et généralités
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    Définition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passage-darguments" class="md-nav__link">
+    Passage d'arguments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#renvoi-de-resultats" class="md-nav__link">
+    Renvoi de résultats
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arguments-positionnels-et-arguments-par-mot-cle" class="md-nav__link">
+    Arguments positionnels et arguments par mot-clé
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../listes/" class="md-nav__link">
+        Listes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tests/" class="md-nav__link">
+        Tests
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#principe-et-generalites" class="md-nav__link">
+    Principe et généralités
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    Définition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passage-darguments" class="md-nav__link">
+    Passage d'arguments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#renvoi-de-resultats" class="md-nav__link">
+    Renvoi de résultats
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arguments-positionnels-et-arguments-par-mot-cle" class="md-nav__link">
+    Arguments positionnels et arguments par mot-clé
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="fonctions">Fonctions</h1>
+<h2 id="principe-et-generalites">Principe et généralités</h2>
+<p>En programmation, les <strong>fonctions</strong> sont très utiles pour réaliser plusieurs fois la même opération au sein d'un programme. Elles rendent également le code plus lisible et plus clair en le fractionnant en blocs logiques.
+Vous connaissez déjà certaines fonctions <em>Python</em>. Par exemple <code>math.cos(angle)</code> du module <code>math</code> renvoie le cosinus de la variable <code>angle</code> exprimé en radian. Vous connaissez aussi des fonctions internes à <em>Python</em> comme <code>range()</code> ou <code>len()</code>. Pour l'instant, une fonction est à vos yeux une sorte de « boîte noire » (voir figure 1) :</p>
+<ol>
+<li>À laquelle vous passez aucune, une ou plusieurs variable(s) entre parenthèses. Ces variables sont appelées <strong>arguments</strong>. Il peut s'agir de n'importe quel type d'objet Python.</li>
+<li>Qui effectue une action.</li>
+<li>Et qui renvoie un objet <em>Python</em> ou rien du tout.</li>
+</ol>
+<p>Fonctionnement schématique d'une fonction.</p>
+<p>Par exemple, si vous appelez la fonction <code>len()</code> de la manière suivante :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="mi">3</span>
+</code></pre></div>
+</td></tr></table>
+<p>voici ce qui se passe :</p>
+<ol>
+<li>vous appelez <code>len()</code> en lui passant une liste en argument (ici la liste <code>[0, 1, 2]</code>) ;</li>
+<li>la fonction calcule la longueur de cette liste ;</li>
+<li>elle vous renvoie un entier égal à cette longueur.</li>
+</ol>
+<p>Autre exemple, si vous appelez la méthode <code>ma_liste.append()</code> (n'oubliez pas, une <strong>méthode</strong> est une <strong>fonction</strong> qui agit sur l'objet auquel elle est attachée par un point) :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<ol>
+<li>Vous passez l'entier 5 en argument ;</li>
+<li>la méthode <code>append()</code> ajoute l'entier 5 à l'objet <code>ma_liste</code> ;</li>
+<li>et elle ne renvoie rien.</li>
+</ol>
+<p>Aux yeux du programmeur au contraire, une fonction est une portion de code effectuant une suite d'instructions bien particulière. Mais avant de vous présenter la syntaxe et la manière de construire une fonction, revenons une dernière fois sur cette notion de « boîte noire » :</p>
+<ul>
+<li>Une fonction effectue une tâche. Pour cela, elle reçoit éventuellement des arguments et renvoie éventuellement quelque chose. L'algorithme utilisé au sein de la fonction n'intéresse pas directement l'utilisateur. Par exemple, il est inutile de savoir comment la fonction math.cos() calcule un cosinus. On a juste besoin de savoir qu'il faut lui passer en argument un angle en radian et qu'elle renvoie le cosinus de cet angle. Ce qui se passe à l'intérieur de la fonction ne regarde que le programmeur.</li>
+<li>Chaque fonction effectue en général une tâche unique et précise. Si cela se complique, il est plus judicieux d'écrire plusieurs fonctions (qui peuvent éventuellement s'appeler les unes les autres). Cette modularité améliore la qualité générale et la lisibilité du code. Vous verrez qu'en Python, les fonctions présentent une grande flexibilité.</li>
+</ul>
+<p>Pour finir sur les généralités, nous avons utilisé dans la Figure 1 le terme <strong>programme principal</strong> (<em>main</em> en anglais) pour désigner l'endroit depuis lequel on appelle une fonction (on verra plus tard que l'on peut en fait appeler une fonction de n'importe où). Le programme principal désigne le code qui est exécuté lorsqu'on lance le script <em>Python</em>, c'est-à-dire toute la suite d'instructions en dehors des fonctions. En général, dans un script <em>Python</em>, on écrit d'abord les fonctions puis le programme principal. Nous aurons l'occasion de revenir sur cette notion de programme principal plus tard dans ce chapitre ainsi que dans le chapitre 12 <em>Plus sur les fonctions</em>.</p>
+<h2 id="definition">Définition</h2>
+<p>Pour définir une fonction, <em>Python</em> utilise le mot-clé <code>def</code>. Si on souhaite que la fonction renvoie quelque chose, il faut utiliser le mot-clé <code>return</code>. Par exemple :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">carre</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">carre</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="mi">4</span>
+</code></pre></div>
+</td></tr></table>
+<p>Notez que la syntaxe de <code>def</code> utilise les deux-points comme les boucles <code>for</code> et <code>while</code> ainsi que les tests <code>if</code>, un bloc d’instructions est donc attendu. De même que pour les boucles et les tests, l'<strong>indentation</strong> de ce bloc d'instructions (qu'on appelle le corps de la fonction) est <strong>obligatoire</strong>.</p>
+<p>Dans l'exemple précédent, nous avons passé un argument à la fonction <code>carre()</code> qui nous a renvoyé (ou retourné) une valeur que nous avons immédiatement affichée à l'écran avec l'instruction <code>print()</code>. Que veut dire valeur renvoyée ? Et bien cela signifie que cette dernière est récupérable dans une variable :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">res</span> <span class="o">=</span> <span class="n">carre</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<span class="mi">4</span>
+</code></pre></div>
+</td></tr></table>
+<p>Ici, le résultat renvoyé par la fonction est stocké dans la variable <code>res</code>. Notez qu'une fonction ne prend pas forcément un argument et ne renvoie pas forcément une valeur, par exemple :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;bonjour&quot;</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">hello</span><span class="p">()</span>
+<span class="n">bonjour</span>
+</code></pre></div>
+</td></tr></table>
+<p>Dans ce cas la fonction, <code>hello()</code> se contente d'afficher la chaîne de caractères <code>"bonjour"</code> à l'écran. Elle ne prend aucun argument et ne renvoie rien. Par conséquent, cela n'a pas de sens de vouloir récupérer dans une variable le résultat renvoyé par une telle fonction. Si on essaie tout de même, <em>Python</em> affecte la valeur <code>None</code> qui signifie rien en anglais:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">var</span> <span class="o">=</span> <span class="n">hello</span><span class="p">()</span>
+<span class="n">bonjour</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
+<span class="kc">None</span>
+</code></pre></div>
+</td></tr></table>
+<p>Ceci n'est pas une faute car <em>Python</em> n'émet pas d'erreur, toutefois cela ne présente, la plupart du temps, guère d'intérêt.</p>
+<h2 id="passage-darguments">Passage d'arguments</h2>
+<p>Le nombre d'arguments que l'on peut passer à une fonction est variable. Nous avons vu ci-dessus des fonctions auxquelles on passait 0 ou 1 argument. Dans les chapitres précédents, vous avez rencontré des fonctions internes à <em>Python</em> qui prenaient au moins 2 arguments. Souvenez-vous par exemple de <code>range(1, 10)</code> ou encore <code>range(1, 10, 2)</code>. Le nombre d'argument est donc laissé libre à l'initiative du programmeur qui développe une nouvelle fonction.
+Une particularité des fonctions en <em>Python</em> est que vous n'êtes pas obligé de préciser le type des arguments que vous lui passez, dès lors que les opérations que vous effectuez avec ces arguments sont valides. <em>Python</em> est en effet connu comme étant un langage au « typage dynamique », c'est-à-dire qu'il reconnaît pour vous le type des variables au moment de l'exécution. Par exemple :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>&gt;&gt;&gt; def fois(x, y):
+...     return x*y
+...
+&gt;&gt;&gt; fois(2, 3)
+6
+&gt;&gt;&gt; fois(3.1415, 5.23)
+16.430045000000003
+&gt;&gt;&gt; fois(&quot;to&quot;, 2)
+&#39;toto&#39;
+&gt;&gt;&gt; fois([1,3], 2)
+[1, 3, 1, 3]
+</code></pre></div>
+</td></tr></table>
+<p>L'opérateur <code>*</code> reconnaît plusieurs types (entiers, <em>floats</em>, chaînes de caractères, listes). Notre fonction <em>fois()</em> est donc capable d'effectuer des tâches différentes ! Même si <em>Python</em> autorise cela, méfiez-vous tout de même de cette grande flexibilité qui pourrait conduire à des surprises dans vos futurs programmes. En général, il est plus judicieux que chaque argument ait un type précis (entiers, <em>floats</em>, chaînes de caractères, etc) et pas l'un ou l'autre.</p>
+<h2 id="renvoi-de-resultats">Renvoi de résultats</h2>
+<p>Un énorme avantage en <em>Python</em> est que les fonctions sont capables de renvoyer plusieurs objets à la fois, comme dans cette fraction de code :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">carre_cube</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">carre_cube</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<p>En réalité <em>Python</em> ne renvoie qu'un seul objet, mais celui-ci peut être séquentiel, c'est-à-dire contenir lui même d'autres objets. Dans notre exemple <em>Python</em> renvoie un objet de type <em>tuple</em>, type que nous verrons dans le chapitre 13 <em>Dictionnaires et tuples</em> (grosso modo, il s'agit d'une sorte de liste avec des propriétés différentes). Notre fonction pourrait tout autant renvoyer une liste :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">carre_cube2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">return</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">]</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">carre_cube2</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">27</span><span class="p">]</span>
+</code></pre></div>
+</td></tr></table>
+<p>Renvoyer un <code>tuple</code> ou une liste de deux éléments (ou plus) est très pratique en conjonction avec l'<strong>affectation multiple</strong>, par exemple :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">z1</span><span class="p">,</span> <span class="n">z2</span> <span class="o">=</span> <span class="n">carre_cube2</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">z1</span>
+<span class="mi">9</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">z2</span>
+<span class="mi">27</span>
+</code></pre></div>
+</td></tr></table>
+<p>Cela permet de récupérer plusieurs valeurs renvoyées par une fonction et de les affecter à la volée à des variables différentes.</p>
+<h2 id="arguments-positionnels-et-arguments-par-mot-cle">Arguments positionnels et arguments par mot-clé</h2>
+<p>Jusqu'à maintenant, nous avons systématiquement passé le nombre d'arguments que la fonction attendait. Que se passe-t-il si une fonction attend deux arguments et que nous ne lui en passons qu'un seul ?</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">fois</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">fois</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="mi">6</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">fois</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">TypeError</span><span class="p">:</span> <span class="n">fois</span><span class="p">()</span> <span class="n">missing</span> <span class="mi">1</span> <span class="n">required</span> <span class="n">positional</span> <span class="n">argument</span><span class="p">:</span> <span class="s1">&#39;y&#39;</span>
+</code></pre></div>
+</td></tr></table>
+<p>On constate que passer un seul argument à une fonction qui en attend deux conduit à une erreur.</p>
+<div class="admonition note">
+<p class="admonition-title">Définition</p>
+<p>Lorsqu'on définit une fonction <code>def fct(x, y):</code> les arguments <code>x</code> et <code>y</code> sont appelés <strong>arguments positionnels</strong> (en anglais <em>positional arguments</em>). Il est strictement obligatoire de les préciser lors de l'appel de la fonction. De plus, il est nécessaire de respecter le même ordre lors de l'appel que dans la définition de la fonction. Dans l'exemple ci-dessus, <code>2</code> correspondra à <code>x</code> et <code>3</code> correspondra à <code>y</code>. Finalement, tout dépendra de leur position, d'où leur qualification de positionnel.</p>
+</div>
+<p>Mais il est aussi possible de passer un ou plusieurs argument(s) de manière facultative et de leur attribuer une valeur par défaut :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">fct</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">return</span> <span class="n">x</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">fct</span><span class="p">()</span>
+<span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">fct</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="mi">10</span>
+</code></pre></div>
+</td></tr></table>
+<p>Définition</p>
+<p>Un argument défini avec une syntaxe def fct(arg=val): est appelé argument par mot-clé (en anglais keyword argument). Le passage d'un tel argument lors de l'appel de la fonction est facultatif. Ce type d'argument ne doit pas être confondu avec les arguments positionnels présentés ci-dessus, dont la syntaxe est def fct(arg):.</p>
+<p>Il est bien sûr possible de passer plusieurs arguments par mot-clé :</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>def fct(x=0, y=0, z=0):
+...     return x, y, z
+...
+fct()
+(0, 0, 0)
+fct(10)
+(10, 0, 0)
+fct(10, 8)
+(10, 8, 0)
+fct(10, 8, 3)
+(10, 8, 3)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>On observe que pour l'instant, les arguments par mot-clé sont pris dans l'ordre dans lesquels on les passe lors de l'appel. Comment pourrions-nous faire si on souhaitait préciser l'argument par mot-clé z et garder les valeurs de x et y par défaut ? Simplement en précisant le nom de l'argument lors de l'appel :</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>fct(z=10)
+(0, 0, 10)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Python permet même de rentrer les arguments par mot-clé dans un ordre arbitraire :</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>fct(z=10, x=3, y=80)
+(3, 80, 10)
+fct(z=10, y=80)
+(0, 80, 10)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Que se passe-t-il lorsque nous avons un mélange d'arguments positionnels et par mot-clé ? Et bien les arguments positionnels doivent toujours être placés avant les arguments par mot-clé :</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>def fct(a, b, x=0, y=0, z=0):
+...     return a, b, x, y, z
+...
+fct(1, 1)
+(1, 1, 0, 0, 0)
+fct(1, 1, z=5)
+(1, 1, 0, 0, 5)
+fct(1, 1, z=5, y=32)
+(1, 1, 0, 32, 5)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>On peut toujours passer les arguments par mot-clé dans un ordre arbitraire à partir du moment où on précise leur nom. Par contre, si les deux arguments positionnels a et b ne sont pas passés à la fonction, Python renvoie une erreur.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>fct(z=0)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: fct() missing 2 required positional arguments: 'a' and 'b'</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Conseils</p>
+<p>Préciser le nom des arguments par mot-clé lors de l'appel d'une fonction est une pratique que nous vous recommandons. Cela les distingue clairement des arguments positionnels.</p>
+<p>L'utilisation d'arguments par mot-clé est habituelle en Python. Elle permet de modifier le comportement par défaut de nombreuses fonctions. Par exemple, si on souhaite que la fonction print() n'affiche pas un retour à la ligne, on peut utiliser l'argument end :</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>print("Message ", end="")
+Message &gt;&gt;&gt;</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Nous verrons, dans le chapitre 20 Fenêtres graphiques et Tkinter, que l'utilisation d'arguments par mot-clé est systématique lorsqu'on crée un objet graphique (une fenêtre, un bouton, etc.).
+9.6 Variables locales et variables globales</p>
+<p>Lorsqu'on manipule des fonctions, il est essentiel de bien comprendre comment se comportent les variables. Une variable est dite locale lorsqu'elle est créée dans une fonction. Elle n'existera et ne sera visible que lors de l'exécution de ladite fonction.</p>
+<p>Une variable est dite globale lorsqu'elle est créée dans le programme principal. Elle sera visible partout dans le programme.</p>
+<p>Ceci ne vous paraît pas clair ? Nous allons prendre un exemple simple qui vous aidera à mieux saisir ces concepts. Observez le code suivant :</p>
+<h1 id="definition-dune-fonction-carre">définition d'une fonction carre()</h1>
+<p>def carre(x):
+    y = x**2
+    return y</p>
+<h1 id="programme-principal">programme principal</h1>
+<p>z = 5
+resultat = carre(z)
+print(resultat)</p>
+<p>Pour la suite des explications, nous allons utiliser l'excellent site Python Tutor qui permet de visualiser l'état des variables au fur et à mesure de l'exécution d'un code Python. Avant de poursuivre, nous vous conseillons de prendre 5 minutes pour tester ce site.</p>
+<p>Regardons maintenant ce qui se passe dans le code ci-dessus, étape par étape :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Étape 1 : Python est prêt à lire la première ligne de code.
+</code></pre></div>
+</td></tr></table>
+<p>Étape 1.
+Figure 2. Étape 1.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Étape 2 : Python met en mémoire la fonction carre(). Notez qu&#39;il ne l&#39;exécute pas ! La fonction est mise dans un espace de la mémoire nommé Global frame, il s&#39;agit de l&#39;espace du programme principal. Dans cet espace, seront stockées toutes les variables globales créées dans le programme. Python est maintenant prêt à exécuter le programme principal.
+</code></pre></div>
+</td></tr></table>
+<p>Étape 2.
+Figure 3. Étape 2.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Étape 3 : Python lit et met en mémoire la variable z. Celle-ci étant créée dans le programme principal, il s&#39;agira d&#39;une variable globale. Ainsi, elle sera également stockée dans le Global frame.
+</code></pre></div>
+</td></tr></table>
+<p>Étape 3.
+Figure 4. Étape 3.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Étape 4 : La fonction carre() est appelée et on lui passe en argument l&#39;entier z. La fonction s&#39;exécute et un nouveau cadre est créé dans lequel Python Tutor va indiquer toutes les variables locales à la fonction. Notez bien que la variable passée en argument, qui s&#39;appelle x dans la fonction, est créée en tant que variable locale. On remarquera aussi que les variables globales situées dans le Global frame sont toujours là.
+</code></pre></div>
+</td></tr></table>
+<p>Étape 4.
+Figure 5. Étape 4.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Étape 5 : Python est maintenant prêt à exécuter chaque ligne de code de la fonction.
+</code></pre></div>
+</td></tr></table>
+<p>Étape 5.
+Figure 6. Étape 5.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Étape 6 : La variable y est créée dans la fonction. Celle-ci est donc stockée en tant que variable locale à la fonction.
+</code></pre></div>
+</td></tr></table>
+<p>Étape 6.
+Figure 7. Étape 6.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Étape 7 : Python s&#39;apprête à renvoyer la variable locale y au programme principal. Python Tutor nous indique le contenu de la valeur renvoyée.
+</code></pre></div>
+</td></tr></table>
+<p>Étape 7.
+Figure 8. Étape 7.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Étape 8 : Python quitte la fonction et la valeur renvoyée par celle-ci est affectée à la variable globale resultat. Notez bien que lorsque Python quitte la fonction, l&#39;espace des variables alloué à la fonction est détruit. Ainsi, toutes les variables créées dans la fonction n&#39;existent plus. On comprend pourquoi elles portent le nom de locales puisqu&#39;elles n&#39;existent que lorsque la fonction est exécutée.
+</code></pre></div>
+</td></tr></table>
+<p>Étape 8.
+Figure 9. Étape 8.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Étape 9 : Python affiche le contenu de la variable resultat et l&#39;exécution est terminée.
+</code></pre></div>
+</td></tr></table>
+<p>Étape 9.
+Figure 10. Étape 9.</p>
+<p>Nous espérons que cet exemple guidé facilitera la compréhension des concepts de variables locales et globales. Cela viendra aussi avec la pratique. Nous irons un peu plus loin sur les fonctions dans le chapitre 12. D'ici là, essayez de vous entraîner au maximum avec les fonctions. C'est un concept ardu, mais il est impératif de le maîtriser.</p>
+<p>Enfin, comme vous avez pu le constater, Python Tutor nous a grandement aidé à comprendre ce qui se passait. N'hésitez pas à l'utiliser sur des exemples ponctuels, ce site vous aidera à visualiser ce qui se passe lorsqu'un code ne fait pas ce que vous attendez.
+9.7 Principe DRY</p>
+<p>L'acronyme DRY signifie Don't Repeat Yourself. Les fonctions permettent de satisfaire ce principe en évitant la duplication de code. En effet, plus un code est dupliqué plusieurs fois dans un programme, plus il sera source d'erreurs, notamment lorsqu'il faudra le faire évoluer.</p>
+<p>Considérons par exemple le code suivant qui convertit plusieurs températures des degrés Fahrenheit en degrés Celsius :</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>temp_in_fahrenheit = 60
+(temp_in_fahrenheit - 32) * (5/8)
+17.5
+temp_in_fahrenheit = 80
+(temp_in_fahrenheit - 32) * (5/8)
+30.0
+temp_in_fahrenheit = 100
+(temp_in_fahrenheit - 32) * (5/8)
+42.5</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Malheureusement il y a une erreur dans la formule de conversion. En effet la formule exacte est :
+temp_celsius=(temp_fahrenheit−32)×59</p>
+<p>Il faut alors reprendre les lignes 2, 5 et 8 précédentes et les corriger. Cela n'est pas efficace, surtout si le même code est utilisé à différents endroits dans le programme.</p>
+<p>En écrivant qu'une seule fois la formule de conversion dans une fonction, on applique le principe DRY :</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>def convert_fahrenheit_to_celsius(temperature):
+...     return (temperature - 32) * (5/9)
+... 
+temp_in_fahrenheit = 60
+convert_fahrenheit_to_celsius(temp_in_fahrenheit)
+15.555555555555557
+temp_in_fahrenheit = 80
+convert_fahrenheit_to_celsius(temp_in_fahrenheit)
+26.666666666666668
+temp_in_fahrenheit = 100
+convert_fahrenheit_to_celsius(temp_in_fahrenheit)
+37.77777777777778</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Et s'il y a une erreur dans la formule, il suffira de le corriger qu'une seule fois, dans la fonction convert_fahrenheit_to_celsius().</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../fichiers/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Fichiers" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Fichiers
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../listes/" class="md-footer__link md-footer__link--next" aria-label="Next: Listes" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Listes
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.f8263e09.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.4fc53ad4.min.js"></script>
+      
+        <script src="../../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
